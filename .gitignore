@@ -1,0 +1,42 @@
+# Node.js dependencies
+node_modules/
+bun.lockb
+
+# TypeScript output
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ESLint cache
+.eslintcache
+
+# Prettier cache
+.prettierignore
+
+# IDE/editor settings
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Husky
+.husky/
+
+# Lint-Staged
+lint-staged.config.js
+
+# Prisma
+prisma/
+
+# Coverage
+coverage/
+
+# Git
+.git/

@@ -94,7 +94,7 @@ export function buildQueryOptions(
   filters: Record<string, any> = {},
   sort: Record<string, 'asc' | 'desc'> = {},
   include: string[] = []
-): { where: any; orderBy: any[]; include: any } {
+): { where?: any; orderBy: any[]; include?: any } {
   const whereConditions: any = {};
   const orderConditions: any[] = [];
 
@@ -130,10 +130,16 @@ export function buildQueryOptions(
     });
   }
 
-  return {
+  // Build query options
+  const queryOptions: { where?: any; orderBy: any[]; include?: any } = {
     where:
       Object.keys(whereConditions).length > 0 ? whereConditions : undefined,
     orderBy: orderConditions.length > 0 ? orderConditions : [],
-    include: includeConditions,
   };
+
+  if (Object.keys(includeConditions).length > 0) {
+    queryOptions.include = includeConditions;
+  }
+
+  return queryOptions;
 }

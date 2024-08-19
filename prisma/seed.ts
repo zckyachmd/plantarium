@@ -4,16 +4,19 @@ import categories from './data/categories';
 const prisma = new PrismaClient();
 
 async function main() {
-  for (const category of categories) {
-    await prisma.category.upsert({
-      where: { id: category.id },
-      update: {
-        name: category.name,
-        description: category.description,
-      },
-      create: category,
-    });
-  }
+  // Use transactions to ensure all operations succeed or fail together
+  await prisma.$transaction(async (tx) => {
+    // Batch upsert categories
+    await Promise.all(
+      categories.map((category) =>
+        tx.category.upsert({
+          where: category,
+          update: category,
+          create: category,
+        })
+      )
+    );
+  });
 }
 
 main()

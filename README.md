@@ -26,41 +26,42 @@
 ## Installation
 
 1. **Clone the Repository and Install Dependencies**
-To get started with Plantarium, clone the repository and install the dependencies:
+   To get started with Plantarium, clone the repository and install the dependencies:
 
    ```bash
    git clone https://github.com/zckyachmd/plantarium.git
    cd plantarium
    bun install
-  ```
+   ```
 
-2. Generate .env File
-Copy the example environment file and fill in the required values:
+2. **Create .env File**
+To set up your database connection string and other environment variables, create a `.env` file in the root directory of your project.
 
-  ```bash
+   ```bash
     cp .env.example .env
-  ```
+   ```
 
-Edit .env to set up your database connection string and other environment variables.
+    Edit .env to set up your database connection string and other environment variables.
 
 3. Run Migrations and Seed
-Apply the database migrations to set up the schema:
+   Apply the database migrations to set up the schema:
 
-  ```bash
+   ```bash
     bunx prisma migrate deploy
-  ```
+   ```
 
-Seed the database with sample data (optional):
+   Seed the database with sample data (optional):
 
-  ```bash
+   ```bash
     bunx prisma db seed
-  ```
+   ```
 
-### Usage 
+### Usage
 
 ```bash
 bun run dev
 ```
+
 Visit `http://localhost:3000` to view the API documentation.
 
 ## Contributing

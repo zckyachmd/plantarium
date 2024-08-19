@@ -12,15 +12,13 @@ export const prisma = new PrismaClient();
  *
  * @param {Record<string, any>} filters - Additional filters to apply to the query. Defaults to an empty object.
  * @param {Record<string, 'asc' | 'desc'>} sort - Sorting options for the query. Defaults to an empty object.
- * @param {string[]} include - List of related data to include in the response. Defaults to an empty array.
  * @return {Promise<PrismaCategory[]>} A promise that resolves to the list of categories.
  */
 export async function getCategories(
   filters: Record<string, any> = {},
-  sort: Record<string, 'asc' | 'desc'> = {},
-  include: string[] = []
+  sort: Record<string, 'asc' | 'desc'> = {}
 ): Promise<PrismaCategory[]> {
-  const queryOptions = buildQueryOptions(filters, sort, include);
+  const queryOptions = buildQueryOptions(filters, sort);
 
   try {
     return await prisma.category.findMany(queryOptions);
@@ -43,9 +41,6 @@ export async function getCategory(id: number): Promise<PrismaCategory | null> {
 
   return prisma.category.findUnique({
     where: { id },
-    include: {
-      plants: true,
-    },
   });
 }
 

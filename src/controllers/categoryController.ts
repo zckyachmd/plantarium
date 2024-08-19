@@ -1,6 +1,6 @@
 import { Context } from 'hono';
-import { handlePrismaError } from '../utils/prismaUtils';
 import { successResponse, errorResponse } from '../utils/responseUtils';
+import { handlePrismaError } from '../utils/prismaUtils';
 import * as categoryModel from '../models/category';
 import * as stringUtils from '../utils/stringUtils';
 
@@ -14,14 +14,9 @@ export async function getCategories(c: Context): Promise<Response> {
   const queryParams = c.req.query();
   const filters = stringUtils.parseQuery(queryParams.filter);
   const sort = stringUtils.parseQuery(queryParams.sort);
-  const include = stringUtils.parseStringArray(queryParams.include);
 
   try {
-    const categories = await categoryModel.getCategories(
-      filters,
-      sort,
-      include
-    );
+    const categories = await categoryModel.getCategories(filters, sort);
 
     if (!categories || categories.length === 0) {
       return c.json(errorResponse('Categories not found'), { status: 404 });
@@ -47,8 +42,9 @@ export async function getCategories(c: Context): Promise<Response> {
  * @return {Promise<Response>} A JSON response containing the category if found, or an error message if not found or an error occurred.
  */
 export async function getCategory(c: Context): Promise<Response> {
+  const id = parseInt(c.req.param('id'));
+
   try {
-    const id = parseInt(c.req.param('id'));
     const category = await categoryModel.getCategory(id);
     if (!category) {
       return c.json(errorResponse('Category not found!'), { status: 404 });
@@ -72,13 +68,14 @@ export async function getCategory(c: Context): Promise<Response> {
  * @return {Promise<Response>} A JSON response containing the newly created category, or an error message if creation failed.
  */
 export async function createCategory(c: Context): Promise<Response> {
-  try {
-    const body = await c.req.json();
+  const body = await c.req.json();
 
-    const existingCategory = await categoryModel.getCategories({
-      name: body.name,
+  try {
+    const existingCategory = await categoryModel.prisma.category.findFirst({
+      where: { name: body.name },
     });
-    if (existingCategory.length > 0) {
+
+    if (existingCategory) {
       return c.json(errorResponse('Category already exists!'), { status: 409 });
     }
 
@@ -86,7 +83,7 @@ export async function createCategory(c: Context): Promise<Response> {
 
     return c.json(
       successResponse('Category created successfully', newCategory),
-      201
+      { status: 201 }
     );
   } catch (error) {
     const {
@@ -105,25 +102,21 @@ export async function createCategory(c: Context): Promise<Response> {
  * @return {Promise<Response>} A JSON response containing the updated category, or an error message if the update failed.
  */
 export async function updateCategory(c: Context): Promise<Response> {
-  try {
-    const id = parseInt(c.req.param('id'));
-    const body = await c.req.json();
+  const id = parseInt(c.req.param('id'));
+  const body = await c.req.json();
 
-    const existingCategories = await categoryModel.prisma.category.findMany({
+  try {
+    const existingCategory = await categoryModel.prisma.category.findFirst({
       where: {
-        OR: [{ id: id }, { name: body.name }],
+        OR: [{ id }, { name: body.name, id: { not: id } }],
       },
     });
 
-    if (!existingCategories.some((category) => category.id === id)) {
+    if (!existingCategory) {
       return c.json(errorResponse('Category not found!'), { status: 404 });
     }
 
-    if (
-      existingCategories.some(
-        (category) => category.name === body.name && category.id !== id
-      )
-    ) {
+    if (existingCategory.name === body.name && existingCategory.id !== id) {
       return c.json(errorResponse('Category already exists!'), { status: 409 });
     }
 
@@ -149,9 +142,9 @@ export async function updateCategory(c: Context): Promise<Response> {
  * @return {Promise<Response>} A JSON response containing a success message if the deletion was successful, or an error message if the deletion failed.
  */
 export async function deleteCategory(c: Context): Promise<Response> {
-  try {
-    const id = parseInt(c.req.param('id'));
+  const id = parseInt(c.req.param('id'));
 
+  try {
     const existingCategory = await categoryModel.getCategory(id);
     if (!existingCategory) {
       return c.json(errorResponse('Category not found!'), { status: 404 });

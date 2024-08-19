@@ -7,19 +7,18 @@ dist/
 build/
 
 # Logs
+logs
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# ESLint cache
-.eslintcache
-
-# Prettier cache
-.prettierignore
+lerna-debug.log*
+.pnpm-debug.log*
 
 # IDE/editor settings
+.git/
 .vscode/
+.vscode-test
 .idea/
 
 # OS-specific files
@@ -29,14 +28,37 @@ Thumbs.db
 # Husky
 .husky/
 
-# Lint-Staged
-lint-staged.config.js
-
 # Prisma
-prisma/
+/prisma/migrations
+/prisma/dev.db
 
-# Coverage
-coverage/
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
-# Git
-.git/
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional prettier cache
+.prettierignore
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Optional REPL history
+.node_repl_history
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local

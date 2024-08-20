@@ -18,3 +18,16 @@ model Category {
   name        String  @unique
   description String?
 }
+
+model Taxonomy {
+  id      Int    @id @default(autoincrement())
+  kingdom String
+  phylum  String
+  class   String
+  order   String
+  family  String
+  genus   String
+  species String
+
+  @@unique([kingdom, phylum, class, order, family, genus, species])
+}

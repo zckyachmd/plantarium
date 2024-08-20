@@ -44,16 +44,15 @@ To set up your database connection string and other environment variables, creat
     Edit .env to set up your database connection string and other environment variables.
 
 3. Run Migrations and Seed
-   Apply the database migrations to set up the schema:
+   Create and run migrations the following commands:
 
    ```bash
-    bunx prisma migrate deploy
+   bun run prisma migrate dev --name init
    ```
 
-   Seed the database with sample data (optional):
-
+   Seed data using the following command (optional):
    ```bash
-    bunx prisma db seed
+   bun run prisma db seed
    ```
 
 ### Usage

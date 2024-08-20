@@ -2,9 +2,10 @@
   "name": "plantarium",
   "scripts": {
     "dev": "bun run --hot src/index.ts",
-    "prepare": "husky install",
+    "start": "bun run src/index.ts",
+    "prepare": "if [ -x \"$(command -v git)\" ]; then husky install; fi",
     "lint": "eslint .",
-    "format": "prettier --write 'src/**/*.{ts,tsx}'",
+    "prettier": "prettier --write 'src/**/*.{ts,tsx}'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "prisma": {

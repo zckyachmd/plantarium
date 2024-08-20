@@ -10,4 +10,4 @@ taxonomies.put('/:id', taxonomyController.updateTaxonomy);
 taxonomies.delete('/:id', taxonomyController.deleteTaxonomy);
 taxonomies.delete('/', taxonomyController.deleteTaxonomies);
 
-export default taxonomies
+export default taxonomies;

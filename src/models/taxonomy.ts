@@ -34,9 +34,7 @@ export async function getTaxonomies(
  * @param {number} id - The ID of the taxonomy to retrieve.
  * @return {Promise<Response>} A JSON response containing the taxonomy if found, or an error message if not found or an error occurred.
  */
-export async function getTaxonomy(
-  id: number
-): Promise<PrismaTaxonomy | null> {
+export async function getTaxonomy(id: number): Promise<PrismaTaxonomy | null> {
   if (isNaN(id)) {
     throw new Error('Invalid ID!');
   }

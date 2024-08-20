@@ -14,20 +14,42 @@ datasource db {
 }
 
 model Category {
-  id          Int     @id @default(autoincrement())
-  name        String  @unique
+  id          Int       @id @default(autoincrement())
+  name        String    @unique
   description String?
+  varieties   Variety[] @relation("CategoryVarieties")
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
 }
 
 model Taxonomy {
-  id      Int    @id @default(autoincrement())
-  kingdom String
-  phylum  String
-  class   String
-  order   String
-  family  String
-  genus   String
-  species String
+  id        Int       @id @default(autoincrement())
+  kingdom   String
+  phylum    String
+  class     String
+  order     String
+  family    String
+  varieties Variety[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
 
-  @@unique([kingdom, phylum, class, order, family, genus, species])
+  @@unique([kingdom, phylum, class, order, family])
+}
+
+model Variety {
+  id             Int        @id @default(autoincrement())
+  name           String     @unique
+  scientificName String
+  description    String?
+  origin         String
+  synonyms       String[]
+  genus          String
+  species        String
+  taxonomy       Taxonomy   @relation(fields: [taxonomyId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  taxonomyId     Int
+  categories     Category[] @relation("CategoryVarieties")
+  createdAt      DateTime   @default(now())
+  updatedAt      DateTime   @updatedAt
+
+  @@index([name, scientificName])
 }

@@ -1,0 +1,1253 @@
+[
+  {
+    "name": "Basil",
+    "scientificName": "Ocimum basilicum",
+    "description": "A common culinary herb.",
+    "origin": "Asia",
+    "synonyms": ["Sweet Basil", "Thai Basil", "Genovese Basil", "Holy Basil"],
+    "genus": "Ocimum",
+    "species": "O. basilicum",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Lamiales",
+      "family": "Lamiaceae"
+    },
+    "categories": ["Herb"]
+  },
+  {
+    "name": "Mint",
+    "scientificName": "Mentha",
+    "description": "A popular herb with a strong flavor.",
+    "origin": "Europe",
+    "synonyms": ["Spearmint", "Peppermint", "Wild Mint", "Garden Mint"],
+    "genus": "Mentha",
+    "species": "M. spicata",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Lamiales",
+      "family": "Lamiaceae"
+    },
+    "categories": ["Herb"]
+  },
+  {
+    "name": "Thyme",
+    "scientificName": "Thymus vulgaris",
+    "description": "A fragrant herb used in cooking and medicine.",
+    "origin": "Mediterranean region",
+    "synonyms": [
+      "Common Thyme",
+      "Garden Thyme",
+      "English Thyme",
+      "French Thyme"
+    ],
+    "genus": "Thymus",
+    "species": "T. vulgaris",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Lamiales",
+      "family": "Lamiaceae"
+    },
+    "categories": ["Herb"]
+  },
+  {
+    "name": "Rosemary",
+    "scientificName": "Salvia rosmarinus",
+    "description": "A woody, perennial herb with fragrant needle-like leaves.",
+    "origin": "Mediterranean region",
+    "synonyms": ["Rosmarinus officinalis", "Common Rosemary"],
+    "genus": "Salvia",
+    "species": "S. rosmarinus",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Lamiales",
+      "family": "Lamiaceae"
+    },
+    "categories": ["Herb"]
+  },
+  {
+    "name": "Oregano",
+    "scientificName": "Origanum vulgare",
+    "description": "A herb used in cooking and for medicinal purposes.",
+    "origin": "Europe and Asia",
+    "synonyms": [
+      "Common Oregano",
+      "Wild Marjoram",
+      "Greek Oregano",
+      "Mexican Oregano"
+    ],
+    "genus": "Origanum",
+    "species": "O. vulgare",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Lamiales",
+      "family": "Lamiaceae"
+    },
+    "categories": ["Herb"]
+  },
+  {
+    "name": "Sage",
+    "scientificName": "Salvia officinalis",
+    "description": "A herb with medicinal and culinary uses.",
+    "origin": "Mediterranean region",
+    "synonyms": ["Common Sage", "Garden Sage", "Clary Sage"],
+    "genus": "Salvia",
+    "species": "S. officinalis",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Lamiales",
+      "family": "Lamiaceae"
+    },
+    "categories": ["Herb"]
+  },
+  {
+    "name": "Cilantro",
+    "scientificName": "Coriandrum sativum",
+    "description": "An herb used for its fresh leaves and seeds.",
+    "origin": "Mediterranean region",
+    "synonyms": ["Coriander", "Coriander Leaf"],
+    "genus": "Coriandrum",
+    "species": "C. sativum",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Apiales",
+      "family": "Apiaceae"
+    },
+    "categories": ["Herb"]
+  },
+  {
+    "name": "Dill",
+    "scientificName": "Anethum graveolens",
+    "description": "An herb with aromatic leaves and seeds used in cooking.",
+    "origin": "Mediterranean region",
+    "synonyms": ["Dill Weed", "Dill Herb"],
+    "genus": "Anethum",
+    "species": "A. graveolens",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Apiales",
+      "family": "Apiaceae"
+    },
+    "categories": ["Herb"]
+  },
+  {
+    "name": "Chives",
+    "scientificName": "Allium schoenoprasum",
+    "description": "A herb with a mild onion flavor.",
+    "origin": "Europe, Asia, and North America",
+    "synonyms": ["Garlic Chives", "Chinese Chives"],
+    "genus": "Allium",
+    "species": "A. schoenoprasum",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Monocotyledons",
+      "order": "Asparagales",
+      "family": "Amaryllidaceae"
+    },
+    "categories": ["Herb"]
+  },
+  {
+    "name": "Lemongrass",
+    "scientificName": "Cymbopogon citratus",
+    "description": "A tropical herb with a lemon flavor.",
+    "origin": "Tropical Asia",
+    "synonyms": ["Citronella"],
+    "genus": "Cymbopogon",
+    "species": "C. citratus",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Monocotyledons",
+      "order": "Poales",
+      "family": "Poaceae"
+    },
+    "categories": ["Herb"]
+  },
+  {
+    "name": "Tarragon",
+    "scientificName": "Artemisia dracunculus",
+    "description": "An herb with a distinct anise flavor.",
+    "origin": "Eurasia",
+    "synonyms": ["Dragon Wormwood", "Estragon"],
+    "genus": "Artemisia",
+    "species": "A. dracunculus",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Asterales",
+      "family": "Asteraceae"
+    },
+    "categories": ["Herb"]
+  },
+  {
+    "name": "Marjoram",
+    "scientificName": "Origanum majorana",
+    "description": "An aromatic herb used in cooking and for medicinal purposes.",
+    "origin": "Mediterranean region",
+    "synonyms": ["Sweet Marjoram"],
+    "genus": "Origanum",
+    "species": "O. majorana",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Lamiales",
+      "family": "Lamiaceae"
+    },
+    "categories": ["Herb"]
+  },
+  {
+    "name": "Lavender",
+    "scientificName": "Lavandula angustifolia",
+    "description": "A fragrant herb used for its essential oils and in culinary applications.",
+    "origin": "Mediterranean region",
+    "synonyms": ["English Lavender", "True Lavender"],
+    "genus": "Lavandula",
+    "species": "L. angustifolia",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Lamiales",
+      "family": "Lamiaceae"
+    },
+    "categories": ["Herb"]
+  },
+  {
+    "name": "Catnip",
+    "scientificName": "Nepeta cataria",
+    "description": "An herb known for its effects on cats and its use in traditional medicine.",
+    "origin": "Europe and Asia",
+    "synonyms": ["Catmint"],
+    "genus": "Nepeta",
+    "species": "N. cataria",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Lamiales",
+      "family": "Lamiaceae"
+    },
+    "categories": ["Herb"]
+  },
+  {
+    "name": "Hyssop",
+    "scientificName": "Hyssopus officinalis",
+    "description": "An herb with aromatic leaves used in culinary and medicinal applications.",
+    "origin": "Mediterranean region",
+    "synonyms": ["Hyssop"],
+    "genus": "Hyssopus",
+    "species": "H. officinalis",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Lamiales",
+      "family": "Lamiaceae"
+    },
+    "categories": ["Herb"]
+  },
+  {
+    "name": "Winter Savory",
+    "scientificName": "Satureja montana",
+    "description": "An herb with a peppery flavor used in cooking and traditional medicine.",
+    "origin": "Mediterranean region",
+    "synonyms": ["Mountain Savory"],
+    "genus": "Satureja",
+    "species": "S. montana",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Lamiales",
+      "family": "Lamiaceae"
+    },
+    "categories": ["Herb"]
+  },
+  {
+    "name": "Ginseng",
+    "scientificName": "Panax ginseng",
+    "description": "A renowned herb used for its medicinal properties, particularly for boosting energy and immune function.",
+    "origin": "East Asia",
+    "synonyms": ["Asian Ginseng", "Korean Ginseng"],
+    "genus": "Panax",
+    "species": "P. ginseng",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Apiales",
+      "family": "Araliaceae"
+    },
+    "categories": ["Herb"]
+  },
+  {
+    "name": "Licorice",
+    "scientificName": "Glycyrrhiza glabra",
+    "description": "A herb known for its sweet flavor and medicinal uses, including soothing the throat and digestive system.",
+    "origin": "Europe and Asia",
+    "synonyms": ["Sweet Root"],
+    "genus": "Glycyrrhiza",
+    "species": "G. glabra",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Fabales",
+      "family": "Fabaceae"
+    },
+    "categories": ["Herb"]
+  },
+  {
+    "name": "Fennel",
+    "scientificName": "Foeniculum vulgare",
+    "description": "A herb with a distinctive anise flavor, used in cooking and for digestive health.",
+    "origin": "Mediterranean region",
+    "synonyms": ["Common Fennel"],
+    "genus": "Foeniculum",
+    "species": "F. vulgare",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Apiales",
+      "family": "Apiaceae"
+    },
+    "categories": ["Herb"]
+  },
+  {
+    "name": "Hops",
+    "scientificName": "Humulus lupulus",
+    "description": "A climbing plant used in brewing to add bitterness and aroma to beer.",
+    "origin": "Europe, Asia, and North America",
+    "synonyms": ["Common Hops"],
+    "genus": "Humulus",
+    "species": "H. lupulus",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Cannabales",
+      "family": "Cannabaceae"
+    },
+    "categories": ["Herb"]
+  },
+  {
+    "name": "Turmeric",
+    "scientificName": "Curcuma longa",
+    "description": "A spice with a distinctive yellow color, used for its anti-inflammatory and antioxidant properties.",
+    "origin": "South Asia",
+    "synonyms": ["Curcuma", "Yellow Ginger"],
+    "genus": "Curcuma",
+    "species": "C. longa",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Monocotyledons",
+      "order": "Zingiberales",
+      "family": "Zingiberaceae"
+    },
+    "categories": ["Herb"]
+  },
+  {
+    "name": "Apple",
+    "scientificName": "Malus domestica",
+    "description": "A widely cultivated fruit known for its sweet and crisp taste.",
+    "origin": "Central Asia",
+    "synonyms": ["Malus", "Apple Tree"],
+    "genus": "Malus",
+    "species": "M. domestica",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Rosales",
+      "family": "Rosaceae"
+    },
+    "categories": ["Fruit"]
+  },
+  {
+    "name": "Cherry",
+    "scientificName": "Prunus avium",
+    "description": "A small, round fruit with a sweet or tart flavor.",
+    "origin": "Europe and Asia",
+    "synonyms": ["Sweet Cherry", "Bird Cherry"],
+    "genus": "Prunus",
+    "species": "P. avium",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Rosales",
+      "family": "Rosaceae"
+    },
+    "categories": ["Fruit"]
+  },
+  {
+    "name": "Peach",
+    "scientificName": "Prunus persica",
+    "description": "A sweet, juicy fruit with a fuzzy skin.",
+    "origin": "China",
+    "synonyms": ["Stone Fruit", "Persica"],
+    "genus": "Prunus",
+    "species": "P. persica",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Rosales",
+      "family": "Rosaceae"
+    },
+    "categories": ["Fruit"]
+  },
+  {
+    "name": "Pear",
+    "scientificName": "Pyrus",
+    "description": "A sweet, juicy fruit with a gritty texture.",
+    "origin": "Europe and Asia",
+    "synonyms": ["European Pear", "Asian Pear"],
+    "genus": "Pyrus",
+    "species": "P. communis",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Rosales",
+      "family": "Rosaceae"
+    },
+    "categories": ["Fruit"]
+  },
+  {
+    "name": "Strawberry",
+    "scientificName": "Fragaria × ananassa",
+    "description": "A red, juicy fruit known for its sweetness and distinct aroma.",
+    "origin": "Europe and North America",
+    "synonyms": ["Garden Strawberry", "Hybrid Strawberry"],
+    "genus": "Fragaria",
+    "species": "F. × ananassa",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Rosales",
+      "family": "Rosaceae"
+    },
+    "categories": ["Fruit"]
+  },
+  {
+    "name": "Orange",
+    "scientificName": "Citrus × sinensis",
+    "description": "A citrus fruit known for its juicy and tangy flavor.",
+    "origin": "Southeast Asia",
+    "synonyms": ["Sweet Orange", "Navel Orange"],
+    "genus": "Citrus",
+    "species": "C. × sinensis",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Sapindales",
+      "family": "Rutaceae"
+    },
+    "categories": ["Fruit"]
+  },
+  {
+    "name": "Grapes",
+    "scientificName": "Vitis vinifera",
+    "description": "Small, round fruits known for their sweet flavor and used to make wine.",
+    "origin": "Near East",
+    "synonyms": ["European Grape", "Wine Grape"],
+    "genus": "Vitis",
+    "species": "V. vinifera",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Vitales",
+      "family": "Vitaceae"
+    },
+    "categories": ["Fruit"]
+  },
+  {
+    "name": "Banana",
+    "scientificName": "Musa",
+    "description": "A tropical fruit known for its soft, sweet flesh and yellow skin.",
+    "origin": "Southeast Asia",
+    "synonyms": ["Plantain", "Banana Plant"],
+    "genus": "Musa",
+    "species": "M. spp.",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Monocotyledons",
+      "order": "Zingiberales",
+      "family": "Musaceae"
+    },
+    "categories": ["Fruit"]
+  },
+  {
+    "name": "Mango",
+    "scientificName": "Mangifera indica",
+    "description": "A tropical fruit known for its sweet, juicy flesh and large seed.",
+    "origin": "South Asia",
+    "synonyms": ["King of Fruits", "Mango Tree"],
+    "genus": "Mangifera",
+    "species": "M. indica",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Sapindales",
+      "family": "Anacardiaceae"
+    },
+    "categories": ["Fruit"]
+  },
+  {
+    "name": "Pineapple",
+    "scientificName": "Ananas comosus",
+    "description": "A tropical fruit with a sweet and tangy flavor, and spiky exterior.",
+    "origin": "South America",
+    "synonyms": ["Ananas", "Pineapple Fruit"],
+    "genus": "Ananas",
+    "species": "A. comosus",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Monocotyledons",
+      "order": "Poales",
+      "family": "Bromeliaceae"
+    },
+    "categories": ["Fruit"]
+  },
+  {
+    "name": "Pomegranate",
+    "scientificName": "Punica granatum",
+    "description": "A fruit known for its juicy, ruby-red seeds.",
+    "origin": "Iran and northern India",
+    "synonyms": ["Granada", "Punica"],
+    "genus": "Punica",
+    "species": "P. granatum",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Myrtales",
+      "family": "Lythraceae"
+    },
+    "categories": ["Fruit"]
+  },
+  {
+    "name": "Juniper Berry",
+    "scientificName": "Juniperus communis",
+    "description": "A berry-like cone from the juniper tree, used as a spice and flavoring in various dishes and beverages.",
+    "origin": "Northern Hemisphere",
+    "synonyms": ["Common Juniper", "Juniper"],
+    "genus": "Juniperus",
+    "species": "J. communis",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Gymnosperms",
+      "class": "Pinopsida",
+      "order": "Cupressales",
+      "family": "Cupressaceae"
+    },
+    "categories": ["Berry"]
+  },
+  {
+    "name": "Yew Berry",
+    "scientificName": "Taxus baccata",
+    "description": "A red, fleshy fruit from the yew tree, often used decoratively rather than consumed.",
+    "origin": "Europe, Asia, and North Africa",
+    "synonyms": ["English Yew"],
+    "genus": "Taxus",
+    "species": "T. baccata",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Gymnosperms",
+      "class": "Pinopsida",
+      "order": "Taxales",
+      "family": "Taxaceae"
+    },
+    "categories": ["Berry"]
+  },
+  {
+    "name": "Cypress Cone",
+    "scientificName": "Cupressus sempervirens",
+    "description": "A woody cone from the cypress tree, sometimes used in cooking and as a flavoring.",
+    "origin": "Mediterranean region",
+    "synonyms": ["Mediterranean Cypress"],
+    "genus": "Cupressus",
+    "species": "C. sempervirens",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Gymnosperms",
+      "class": "Pinopsida",
+      "order": "Cupressales",
+      "family": "Cupressaceae"
+    },
+    "categories": ["Cone"]
+  },
+  {
+    "name": "Sago Palm Seeds",
+    "scientificName": "Cycas revoluta",
+    "description": "Seeds from the sago palm, used for their starch content and in various traditional dishes.",
+    "origin": "Japan and other parts of East Asia",
+    "synonyms": ["Sago Palm"],
+    "genus": "Cycas",
+    "species": "C. revoluta",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Gymnosperms",
+      "class": "Cycadopsida",
+      "order": "Cycadales",
+      "family": "Cycadaceae"
+    },
+    "categories": ["Seed"]
+  },
+  {
+    "name": "Carrot",
+    "scientificName": "Daucus carota",
+    "description": "A root vegetable known for its bright orange color and sweet flavor.",
+    "origin": "Iran and Afghanistan",
+    "synonyms": ["Daucus", "Orange Carrot"],
+    "genus": "Daucus",
+    "species": "D. carota",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Apiales",
+      "family": "Apiaceae"
+    },
+    "categories": ["Vegetable"]
+  },
+  {
+    "name": "Broccoli",
+    "scientificName": "Brassica oleracea",
+    "description": "A green vegetable known for its dense, edible flower heads.",
+    "origin": "Italy",
+    "synonyms": ["Brassica", "Broccoli Rabe"],
+    "genus": "Brassica",
+    "species": "B. oleracea",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Brassicales",
+      "family": "Brassicaceae"
+    },
+    "categories": ["Vegetable"]
+  },
+  {
+    "name": "Spinach",
+    "scientificName": "Spinacia oleracea",
+    "description": "A leafy green vegetable known for its high iron content.",
+    "origin": "Persia (Iran and Afghanistan)",
+    "synonyms": ["Spinacia", "Leaf Spinach"],
+    "genus": "Spinacia",
+    "species": "S. oleracea",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Caryophyllales",
+      "family": "Amaranthaceae"
+    },
+    "categories": ["Vegetable"]
+  },
+  {
+    "name": "Potato",
+    "scientificName": "Solanum tuberosum",
+    "description": "A starchy tuber that is a staple food in many cultures.",
+    "origin": "South America",
+    "synonyms": ["Solanum", "Irish Potato"],
+    "genus": "Solanum",
+    "species": "S. tuberosum",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Solanales",
+      "family": "Solanaceae"
+    },
+    "categories": ["Vegetable"]
+  },
+  {
+    "name": "Tomato",
+    "scientificName": "Solanum lycopersicum",
+    "description": "A red fruit often used as a vegetable in cooking.",
+    "origin": "West Central America",
+    "synonyms": ["Solanum", "Tomato Fruit"],
+    "genus": "Solanum",
+    "species": "S. lycopersicum",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Solanales",
+      "family": "Solanaceae"
+    },
+    "categories": ["Vegetable"]
+  },
+  {
+    "name": "Lettuce",
+    "scientificName": "Lactuca sativa",
+    "description": "A leafy green used primarily in salads.",
+    "origin": "Mediterranean region",
+    "synonyms": ["Lactuca", "Garden Lettuce"],
+    "genus": "Lactuca",
+    "species": "L. sativa",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Asterales",
+      "family": "Asteraceae"
+    },
+    "categories": ["Vegetable"]
+  },
+  {
+    "name": "Cucumber",
+    "scientificName": "Cucumis sativus",
+    "description": "A refreshing vegetable often used in salads.",
+    "origin": "India",
+    "synonyms": ["Cucumis", "Cucumber Fruit"],
+    "genus": "Cucumis",
+    "species": "C. sativus",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Cucurbitales",
+      "family": "Cucurbitaceae"
+    },
+    "categories": ["Vegetable"]
+  },
+  {
+    "name": "Cauliflower",
+    "scientificName": "Brassica oleracea var. botrytis",
+    "description": "A vegetable with a compact cluster of white flowers.",
+    "origin": "Mediterranean region",
+    "synonyms": ["Brassica", "Cauliflower Rabe"],
+    "genus": "Brassica",
+    "species": "B. oleracea var. botrytis",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Brassicales",
+      "family": "Brassicaceae"
+    },
+    "categories": ["Vegetable"]
+  },
+  {
+    "name": "Beetroot",
+    "scientificName": "Beta vulgaris",
+    "description": "A root vegetable known for its deep red color and sweet flavor.",
+    "origin": "Mediterranean region",
+    "synonyms": ["Beta", "Beet"],
+    "genus": "Beta",
+    "species": "B. vulgaris",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Caryophyllales",
+      "family": "Amaranthaceae"
+    },
+    "categories": ["Vegetable"]
+  },
+  {
+    "name": "Radish",
+    "scientificName": "Raphanus sativus",
+    "description": "A root vegetable with a spicy flavor and crisp texture.",
+    "origin": "Southeast Asia",
+    "synonyms": ["Raphanus", "Garden Radish"],
+    "genus": "Raphanus",
+    "species": "R. sativus",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Brassicales",
+      "family": "Brassicaceae"
+    },
+    "categories": ["Vegetable"]
+  },
+  {
+    "name": "Kale",
+    "scientificName": "Brassica oleracea var. sabellica",
+    "description": "A leafy green vegetable known for its nutrient density.",
+    "origin": "Mediterranean region",
+    "synonyms": ["Brassica", "Curly Kale"],
+    "genus": "Brassica",
+    "species": "B. oleracea var. sabellica",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Brassicales",
+      "family": "Brassicaceae"
+    },
+    "categories": ["Vegetable"]
+  },
+  {
+    "name": "Brussels Sprouts",
+    "scientificName": "Brassica oleracea var. gemmifera",
+    "description": "Small, cabbage-like vegetables that grow on a tall stalk.",
+    "origin": "Belgium",
+    "synonyms": ["Brassica", "Brussels Sprout"],
+    "genus": "Brassica",
+    "species": "B. oleracea var. gemmifera",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Brassicales",
+      "family": "Brassicaceae"
+    },
+    "categories": ["Vegetable"]
+  },
+  {
+    "name": "Chinese Cabbage",
+    "scientificName": "Brassica rapa subsp. pekinensis",
+    "description": "A type of cabbage with a milder flavor and a crisp texture.",
+    "origin": "China",
+    "synonyms": ["Brassica", "Napa Cabbage"],
+    "genus": "Brassica",
+    "species": "B. rapa subsp. pekinensis",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Brassicales",
+      "family": "Brassicaceae"
+    },
+    "categories": ["Vegetable"]
+  },
+  {
+    "name": "Rutabaga",
+    "scientificName": "Brassica napus var. napobrassica",
+    "description": "A root vegetable with a mild, sweet flavor.",
+    "origin": "Scotland",
+    "synonyms": ["Brassica", "Swede"],
+    "genus": "Brassica",
+    "species": "B. napus var. napobrassica",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Brassicales",
+      "family": "Brassicaceae"
+    },
+    "categories": ["Vegetable"]
+  },
+  {
+    "name": "Cabbage",
+    "scientificName": "Brassica oleracea var. capitata",
+    "description": "A leafy green vegetable with a dense head of leaves.",
+    "origin": "Mediterranean region",
+    "synonyms": ["Brassica", "Head Cabbage"],
+    "genus": "Brassica",
+    "species": "B. oleracea var. capitata",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Brassicales",
+      "family": "Brassicaceae"
+    },
+    "categories": ["Vegetable"]
+  },
+  {
+    "name": "Bracken Fern",
+    "scientificName": "Pteridium aquilinum",
+    "description": "A common fern with edible young fronds used in various traditional dishes.",
+    "origin": "Worldwide",
+    "synonyms": ["Bracken", "Common Bracken"],
+    "genus": "Pteridium",
+    "species": "P. aquilinum",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Pteridophyta",
+      "class": "Filicopsida",
+      "order": "Pteridales",
+      "family": "Dennstaedtiaceae"
+    },
+    "categories": ["Vegetable"]
+  },
+  {
+    "name": "Field Horsetail",
+    "scientificName": "Equisetum arvense",
+    "description": "A fern-like plant used historically in herbal medicine, with edible young shoots.",
+    "origin": "Northern Hemisphere",
+    "synonyms": ["Common Horsetail", "Paddock-Snake"],
+    "genus": "Equisetum",
+    "species": "E. arvense",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Pteridophyta",
+      "class": "Equisetopsida",
+      "order": "Equisetales",
+      "family": "Equisetaceae"
+    },
+    "categories": ["Vegetable"]
+  },
+  {
+    "name": "Sago Palm Shoots",
+    "scientificName": "Cycas revoluta",
+    "description": "Young shoots of the sago palm, used in some traditional cuisines.",
+    "origin": "Japan and parts of East Asia",
+    "synonyms": ["Sago Palm"],
+    "genus": "Cycas",
+    "species": "C. revoluta",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Gymnosperms",
+      "class": "Cycadopsida",
+      "order": "Cycadales",
+      "family": "Cycadaceae"
+    },
+    "categories": ["Vegetable"]
+  },
+  {
+    "name": "Rose",
+    "scientificName": "Rosa",
+    "description": "A popular flower known for its beauty and fragrance.",
+    "origin": "Asia, Europe, North America",
+    "synonyms": ["Rose Bush"],
+    "genus": "Rosa",
+    "species": "R. spp.",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Rosales",
+      "family": "Rosaceae"
+    },
+    "categories": ["Flower"]
+  },
+  {
+    "name": "Tulip",
+    "scientificName": "Tulipa",
+    "description": "A bulbous flower known for its bright and colorful blooms.",
+    "origin": "Central Asia",
+    "synonyms": ["Tulip Flower"],
+    "genus": "Tulipa",
+    "species": "T. spp.",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Monocotyledons",
+      "order": "Liliales",
+      "family": "Liliaceae"
+    },
+    "categories": ["Flower"]
+  },
+  {
+    "name": "Lily",
+    "scientificName": "Lilium",
+    "description": "A striking flower with trumpet-shaped blooms.",
+    "origin": "Europe, Asia, North America",
+    "synonyms": ["True Lily"],
+    "genus": "Lilium",
+    "species": "L. spp.",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Monocotyledons",
+      "order": "Liliales",
+      "family": "Liliaceae"
+    },
+    "categories": ["Flower"]
+  },
+  {
+    "name": "Sunflower",
+    "scientificName": "Helianthus annuus",
+    "description": "A tall plant with large yellow flowers that turn toward the sun.",
+    "origin": "North America",
+    "synonyms": ["Common Sunflower"],
+    "genus": "Helianthus",
+    "species": "H. annuus",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Asterales",
+      "family": "Asteraceae"
+    },
+    "categories": ["Flower"]
+  },
+  {
+    "name": "Daisy",
+    "scientificName": "Bellis perennis",
+    "description": "A small, cheerful flower with white petals and a yellow center.",
+    "origin": "Europe",
+    "synonyms": ["Common Daisy"],
+    "genus": "Bellis",
+    "species": "B. perennis",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Asterales",
+      "family": "Asteraceae"
+    },
+    "categories": ["Flower"]
+  },
+  {
+    "name": "Orchid",
+    "scientificName": "Orchidaceae",
+    "description": "A diverse and widespread family of flowering plants with colorful and fragrant blooms.",
+    "origin": "Global",
+    "synonyms": ["Orchid Flower"],
+    "genus": "Orchidaceae",
+    "species": "Various",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Monocotyledons",
+      "order": "Asparagales",
+      "family": "Orchidaceae"
+    },
+    "categories": ["Flower"]
+  },
+  {
+    "name": "Marigold",
+    "scientificName": "Tagetes",
+    "description": "A vibrant flower known for its bright orange and yellow petals.",
+    "origin": "Central America",
+    "synonyms": ["African Marigold", "French Marigold"],
+    "genus": "Tagetes",
+    "species": "T. spp.",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Asterales",
+      "family": "Asteraceae"
+    },
+    "categories": ["Flower"]
+  },
+  {
+    "name": "Peony",
+    "scientificName": "Paeonia",
+    "description": "A perennial flower known for its large, fragrant blooms.",
+    "origin": "Europe, Asia, North America",
+    "synonyms": ["Tree Peony", "Herbaceous Peony"],
+    "genus": "Paeonia",
+    "species": "P. spp.",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Paeoniales",
+      "family": "Paeoniaceae"
+    },
+    "categories": ["Flower"]
+  },
+  {
+    "name": "Chrysanthemum",
+    "scientificName": "Chrysanthemum",
+    "description": "A popular fall flower known for its diverse colors and forms.",
+    "origin": "Asia and northeastern Europe",
+    "synonyms": ["Mum"],
+    "genus": "Chrysanthemum",
+    "species": "C. spp.",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Asterales",
+      "family": "Asteraceae"
+    },
+    "categories": ["Flower"]
+  },
+  {
+    "name": "Sago Palm",
+    "scientificName": "Cycas revoluta",
+    "description": "An ornamental plant with large, feather-like leaves and cones. It is often grown for its aesthetic value.",
+    "origin": "Japan and parts of East Asia",
+    "synonyms": ["Sago Palm"],
+    "genus": "Cycas",
+    "species": "C. revoluta",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Gymnosperms",
+      "class": "Cycadopsida",
+      "order": "Cycadales",
+      "family": "Cycadaceae"
+    },
+    "categories": ["Flower"]
+  },
+  {
+    "name": "Norfolk Island Pine",
+    "scientificName": "Araucaria heterophylla",
+    "description": "An ornamental tree known for its symmetrical, whorled branches that resemble a Christmas tree.",
+    "origin": "Norfolk Island",
+    "synonyms": ["Norfolk Island Pine"],
+    "genus": "Araucaria",
+    "species": "A. heterophylla",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Gymnosperms",
+      "class": "Coniferopsida",
+      "order": "Pinales",
+      "family": "Araucariaceae"
+    },
+    "categories": ["Flower"]
+  },
+  {
+    "name": "Wollemi Pine",
+    "scientificName": "Wollemia nobilis",
+    "description": "A rare and ancient tree species with distinctive, fern-like foliage. It was discovered in the wild in the 1990s.",
+    "origin": "Australia",
+    "synonyms": ["Wollemi Pine"],
+    "genus": "Wollemia",
+    "species": "W. nobilis",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Gymnosperms",
+      "class": "Coniferopsida",
+      "order": "Pinales",
+      "family": "Wollemia"
+    },
+    "categories": ["Flower"]
+  },
+  {
+    "name": "Bunya Pine",
+    "scientificName": "Araucaria bidwillii",
+    "description": "A large tree with a broad canopy and large cones. It is native to the Bunya Mountains in Queensland, Australia.",
+    "origin": "Australia",
+    "synonyms": ["Bunya Pine"],
+    "genus": "Araucaria",
+    "species": "A. bidwillii",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Gymnosperms",
+      "class": "Coniferopsida",
+      "order": "Pinales",
+      "family": "Araucariaceae"
+    },
+    "categories": ["Flower"]
+  },
+  {
+    "name": "Aloe Vera",
+    "scientificName": "Aloe barbadensis",
+    "description": "A succulent plant with medicinal properties, known for its gel-filled leaves.",
+    "origin": "Arabian Peninsula",
+    "synonyms": ["Aloe Vera Gel", "Aloe Vera Plant"],
+    "genus": "Aloe",
+    "species": "A. barbadensis",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Monocotyledons",
+      "order": "Asparagales",
+      "family": "Asphodelaceae"
+    },
+    "categories": ["Succulent"]
+  },
+  {
+    "name": "Echeveria",
+    "scientificName": "Echeveria elegans",
+    "description": "A rosette-forming succulent with thick, fleshy leaves that come in various colors.",
+    "origin": "Mexico",
+    "synonyms": ["Mexican Snowball"],
+    "genus": "Echeveria",
+    "species": "E. elegans",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Caryophyllales",
+      "family": "Crassulaceae"
+    },
+    "categories": ["Succulent"]
+  },
+  {
+    "name": "Jade Plant",
+    "scientificName": "Crassula ovata",
+    "description": "A popular succulent with rounded, fleshy leaves that is often grown as a houseplant.",
+    "origin": "South Africa",
+    "synonyms": ["Money Tree", "Friendship Tree"],
+    "genus": "Crassula",
+    "species": "C. ovata",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Caryophyllales",
+      "family": "Crassulaceae"
+    },
+    "categories": ["Succulent"]
+  },
+  {
+    "name": "Haworthia",
+    "scientificName": "Haworthia fasciata",
+    "description": "A small, rosette-forming succulent with distinctive white stripes on its leaves.",
+    "origin": "South Africa",
+    "synonyms": ["Zebra Plant"],
+    "genus": "Haworthia",
+    "species": "H. fasciata",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Asparagales",
+      "family": "Asphodelaceae"
+    },
+    "categories": ["Succulent"]
+  },
+  {
+    "name": "Sedum",
+    "scientificName": "Sedum morganianum",
+    "description": "A trailing succulent known for its cascading, fleshy leaves.",
+    "origin": "Mexico",
+    "synonyms": ["Burro’s Tail", "Donkey Tail"],
+    "genus": "Sedum",
+    "species": "S. morganianum",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Caryophyllales",
+      "family": "Crassulaceae"
+    },
+    "categories": ["Succulent"]
+  },
+  {
+    "name": "Agave",
+    "scientificName": "Agave americana",
+    "description": "A large succulent with long, spiky leaves that can form rosettes.",
+    "origin": "Mexico",
+    "synonyms": ["Century Plant"],
+    "genus": "Agave",
+    "species": "A. americana",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Monocotyledons",
+      "order": "Asparagales",
+      "family": "Asparagaceae"
+    },
+    "categories": ["Succulent"]
+  }
+]

@@ -76,8 +76,6 @@ export async function createTaxonomy(c: Context): Promise<Response> {
     class: body.taxonomyClass,
     order: body.order,
     family: body.family,
-    genus: body.genus,
-    species: body.species,
   };
 
   try {
@@ -122,8 +120,6 @@ export async function updateTaxonomy(c: Context): Promise<Response> {
       class: body.taxonomyClass,
       order: body.order,
       family: body.family,
-      genus: body.genus,
-      species: body.species,
     };
 
     const existingTaxonomy = await taxonomyModel.prisma.taxonomy.findFirst({

@@ -11,12 +11,17 @@ import * as stringUtils from '../utils/stringUtils';
  * @return {Promise<Response>} A promise that resolves to the HTTP response containing the list of taxonomies.
  */
 export async function getTaxonomies(c: Context): Promise<Response> {
-  const query = c.req.query();
-  const filters = stringUtils.parseQuery(query.filter);
-  const sort = stringUtils.parseQuery(query.sort);
+  const queryParams = c.req.query();
+  const filters = stringUtils.parseQuery(queryParams.filter);
+  const sort = stringUtils.parseQuery(queryParams.sort);
+  const include = c.req.query('include');
 
   try {
-    const taxonomies = await taxonomyModel.getTaxonomies(filters, sort);
+    const taxonomies = await taxonomyModel.getTaxonomies(
+      filters,
+      sort,
+      include
+    );
 
     if (!taxonomies || taxonomies.length === 0) {
       return c.json(errorResponse('Taxonomies not found'), { status: 404 });
@@ -43,9 +48,10 @@ export async function getTaxonomies(c: Context): Promise<Response> {
  */
 export async function getTaxonomy(c: Context): Promise<Response> {
   const id = parseInt(c.req.param('id'));
+  const include = c.req.query('include');
 
   try {
-    const taxonomy = await taxonomyModel.getTaxonomy(id);
+    const taxonomy = await taxonomyModel.getTaxonomy(id, include);
     if (!taxonomy) {
       return c.json(errorResponse('Taxonomy not found!'), { status: 404 });
     }

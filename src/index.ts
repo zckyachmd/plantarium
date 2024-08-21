@@ -1,14 +1,12 @@
-import { Hono } from 'hono';
-import categories from './routes/categories';
-import taxonomies from './routes/taxonomy';
+import { Hono } from "hono";
+import api from "./routes/api";
 
 const app = new Hono();
 
-app.get('/', (c) => {
-  return c.text('Hello Hono!');
+app.get("/", (c) => {
+  return c.text("Hello Hono!");
 });
 
-app.route('/categories', categories);
-app.route('/taxonomies', taxonomies);
+app.route("/api", api);
 
 export default app;

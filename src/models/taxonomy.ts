@@ -4,6 +4,7 @@ import {
   Taxonomy as PrismaTaxonomy,
 } from '@prisma/client';
 import { buildQueryOptions } from '../utils/prismaUtils';
+import { parseInclude } from '../utils/stringUtils';
 
 export const prisma = new PrismaClient();
 
@@ -12,13 +13,19 @@ export const prisma = new PrismaClient();
  *
  * @param {Record<string, any>} filters - Additional filters to apply to the query. Defaults to an empty object.
  * @param {Record<string, 'asc' | 'desc'>} sort - Sorting options for the query. Defaults to an empty object.
+ * @param {string} include - Comma-separated list of relations to include in the query
  * @return {Promise<PrismaTaxonomy[]>} A promise that resolves to the list of taxonomies.
  */
 export async function getTaxonomies(
   filters: Record<string, any> = {},
-  sort: Record<string, 'asc' | 'desc'> = {}
+  sort: Record<string, 'asc' | 'desc'> = {},
+  include?: string
 ): Promise<PrismaTaxonomy[]> {
-  const queryOptions = buildQueryOptions(filters, sort);
+  // Handle include
+  const includeConditions = include ? parseInclude(include) : {};
+
+  // Handle filtering
+  const queryOptions = buildQueryOptions(filters, sort, includeConditions);
 
   try {
     return await prisma.taxonomy.findMany(queryOptions);
@@ -32,15 +39,24 @@ export async function getTaxonomies(
  * Retrieves a taxonomy from the database by its ID and returns it as a JSON response.
  *
  * @param {number} id - The ID of the taxonomy to retrieve.
+ * @param {string} include - Comma-separated list of relations to include in the query
  * @return {Promise<Response>} A JSON response containing the taxonomy if found, or an error message if not found or an error occurred.
  */
-export async function getTaxonomy(id: number): Promise<PrismaTaxonomy | null> {
+export async function getTaxonomy(
+  id: number,
+  include?: string
+): Promise<PrismaTaxonomy | null> {
   if (isNaN(id)) {
     throw new Error('Invalid ID!');
   }
 
+  // Handle include
+  const includeConditions = include ? parseInclude(include) : {};
+
   return prisma.taxonomy.findUnique({
     where: { id },
+    include:
+      Object.keys(includeConditions).length > 0 ? includeConditions : undefined,
   });
 }
 

@@ -4,6 +4,7 @@ import {
   Category as PrismaCategory,
 } from '@prisma/client';
 import { buildQueryOptions } from '../utils/prismaUtils';
+import { parseInclude } from '../utils/stringUtils';
 
 export const prisma = new PrismaClient();
 
@@ -12,13 +13,19 @@ export const prisma = new PrismaClient();
  *
  * @param {Record<string, any>} filters - Additional filters to apply to the query. Defaults to an empty object.
  * @param {Record<string, 'asc' | 'desc'>} sort - Sorting options for the query. Defaults to an empty object.
+ * @param {string} include - Comma-separated list of relations to include in the query
  * @return {Promise<PrismaCategory[]>} A promise that resolves to the list of categories.
  */
 export async function getCategories(
   filters: Record<string, any> = {},
-  sort: Record<string, 'asc' | 'desc'> = {}
+  sort: Record<string, 'asc' | 'desc'> = {},
+  include?: string
 ): Promise<PrismaCategory[]> {
-  const queryOptions = buildQueryOptions(filters, sort);
+  // Handle include
+  const includeConditions = include ? parseInclude(include) : {};
+
+  // Handle filtering
+  const queryOptions = buildQueryOptions(filters, sort, includeConditions);
 
   try {
     return await prisma.category.findMany(queryOptions);
@@ -32,15 +39,24 @@ export async function getCategories(
  * Retrieves a category object from the database by its ID.
  *
  * @param {number} id - The ID of the category to retrieve
+ * @param {string} include - Comma-separated list of relations to include in the query
  * @return {PrismaCategory | null} The category object if found, or null if not found
  */
-export async function getCategory(id: number): Promise<PrismaCategory | null> {
+export async function getCategory(
+  id: number,
+  include?: string
+): Promise<PrismaCategory | null> {
   if (isNaN(id)) {
     throw new Error('Invalid ID!');
   }
 
+  // Handle include
+  const includeConditions = include ? parseInclude(include) : {};
+
   return prisma.category.findUnique({
     where: { id },
+    include:
+      Object.keys(includeConditions).length > 0 ? includeConditions : undefined,
   });
 }
 

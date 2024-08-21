@@ -13,10 +13,6 @@ RUN bun install --frozen-lockfile --production
 # Copy the rest of the application code
 COPY . .
 
-# Run Prisma migrations and generate Prisma Client
-RUN bun run prisma migrate deploy
-RUN bun run prisma generate
-
 # Stage 2: Runtime
 FROM oven/bun:latest
 
@@ -26,9 +22,6 @@ WORKDIR /app
 # Copy built files and node_modules from the builder stage
 COPY --from=builder /app /app
 
-# Copy Prisma schema
-COPY --from=builder /app/prisma /app/prisma
-
 # Copy .env file
 COPY .env .env
 
@@ -36,4 +29,4 @@ COPY .env .env
 EXPOSE 3000
 
 # Start the application
-CMD ["bun", "run", "start"]
+CMD ["bun", "run", "src/index.ts"]

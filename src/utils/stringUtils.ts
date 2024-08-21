@@ -28,27 +28,21 @@ export function parseQuery(
     const decodedKey = decodeURIComponent(key);
     const decodedValue = decodeURIComponent(value || '');
 
-    // Handle special 'include' key to convert comma-separated values to an array
-    if (decodedKey === 'include') {
-      params[decodedKey] = decodedValue.split(',').map((v) => v.trim());
-    } else {
-      // Handle other keys
-      if (decodedKey.includes('[')) {
-        // Handle nested keys like "filter[name]"
-        const keys = decodedKey.split(/\[|\]/).filter(Boolean);
-        let current = params;
+    if (decodedKey.includes('[')) {
+      // Handle nested keys like "filter[name]"
+      const keys = decodedKey.split(/\[|\]/).filter(Boolean);
+      let current = params;
 
-        keys.forEach((subKey, index) => {
-          if (index === keys.length - 1) {
-            current[subKey] = decodedValue;
-          } else {
-            current[subKey] = current[subKey] || {};
-            current = current[subKey];
-          }
-        });
-      } else {
-        params[decodedKey] = decodedValue;
-      }
+      keys.forEach((subKey, index) => {
+        if (index === keys.length - 1) {
+          current[subKey] = decodedValue;
+        } else {
+          current[subKey] = current[subKey] || {};
+          current = current[subKey];
+        }
+      });
+    } else {
+      params[decodedKey] = decodedValue;
     }
   });
 
@@ -56,25 +50,44 @@ export function parseQuery(
 }
 
 /**
- * Converts a string or array of strings into a normalized array of strings.
+ * Parses a nested include string and builds an include object for Prisma queries.
  *
- * @param {string|string[]|null|undefined} value - The input string or array of strings to be normalized.
- * @param {string} [delimiter=','] - The delimiter to use when splitting the input string.
- * @return {string[]} An array of strings, with each string trimmed of whitespace.
+ * @param {string} includes - Comma-separated nested include strings
+ * @return {object} Prisma include object
  */
-export function parseStringArray(
-  value: string | string[] | null | undefined,
-  delimiter: string = ','
-): string[] {
-  if (!value) {
-    return [];
-  }
+export function parseInclude(includes: string): any {
+  const includeArray = includes.split(',').map((item) => item.trim());
+  const includeObject: any = {};
 
-  if (Array.isArray(value)) {
-    return value;
-  }
+  includeArray.forEach((include: string) => {
+    const parts = include.split('.');
 
-  return value.split(delimiter).map((v) => v.trim());
+    let currentLevel = includeObject;
+
+    parts.forEach((part: string, index: number) => {
+      if (index === parts.length - 1) {
+        currentLevel[part] = true;
+      } else {
+        if (!currentLevel[part] || typeof currentLevel[part] === 'boolean') {
+          currentLevel[part] = {};
+        }
+        currentLevel = currentLevel[part];
+      }
+    });
+  });
+
+  const wrapWithInclude = (obj: any): any => {
+    if (typeof obj === 'object' && obj !== null && !Array.isArray(obj)) {
+      for (const key of Object.keys(obj)) {
+        if (typeof obj[key] === 'object' && obj[key] !== null) {
+          obj[key] = { include: wrapWithInclude(obj[key]) };
+        }
+      }
+    }
+    return obj;
+  };
+
+  return wrapWithInclude(includeObject);
 }
 
 /**

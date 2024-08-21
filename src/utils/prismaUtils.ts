@@ -87,13 +87,13 @@ export function handlePrismaError(error: any): PrismaErrorResponse {
  *
  * @param {Record<string, any>} filters - Additional filters to apply to the query. Defaults to an empty object.
  * @param {Record<string, 'asc' | 'desc'>} sort - Sorting options for the query. Defaults to an empty object.
- * @param {string[]} include - List of related data to include in the response. Defaults to an empty array.
+ * @param {any} include - Comma-separated list of relations to include in the query
  * @return {Object} The query options including where, orderBy, and include.
  */
 export function buildQueryOptions(
-  filters: Record<string, any> = {},
-  sort: Record<string, 'asc' | 'desc'> = {},
-  include: string[] = []
+  filters?: Record<string, any>,
+  sort?: Record<string, 'asc' | 'desc'>,
+  include?: any
 ): { where?: any; orderBy: any[]; include?: any } {
   const whereConditions: any = {};
   const orderConditions: any[] = [];
@@ -122,24 +122,13 @@ export function buildQueryOptions(
     });
   }
 
-  // Handle include
-  const includeConditions: any = {};
-  if (include.length > 0) {
-    include.forEach((relation) => {
-      includeConditions[relation] = true;
-    });
-  }
-
   // Build query options
   const queryOptions: { where?: any; orderBy: any[]; include?: any } = {
     where:
       Object.keys(whereConditions).length > 0 ? whereConditions : undefined,
     orderBy: orderConditions.length > 0 ? orderConditions : [],
+    include: Object.keys(include).length > 0 ? include : undefined,
   };
-
-  if (Object.keys(includeConditions).length > 0) {
-    queryOptions.include = includeConditions;
-  }
 
   return queryOptions;
 }

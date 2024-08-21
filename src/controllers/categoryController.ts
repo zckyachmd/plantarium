@@ -14,9 +14,14 @@ export async function getCategories(c: Context): Promise<Response> {
   const queryParams = c.req.query();
   const filters = stringUtils.parseQuery(queryParams.filter);
   const sort = stringUtils.parseQuery(queryParams.sort);
+  const include = c.req.query('include');
 
   try {
-    const categories = await categoryModel.getCategories(filters, sort);
+    const categories = await categoryModel.getCategories(
+      filters,
+      sort,
+      include
+    );
 
     if (!categories || categories.length === 0) {
       return c.json(errorResponse('Categories not found'), { status: 404 });
@@ -43,9 +48,10 @@ export async function getCategories(c: Context): Promise<Response> {
  */
 export async function getCategory(c: Context): Promise<Response> {
   const id = parseInt(c.req.param('id'));
+  const include = c.req.query('include');
 
   try {
-    const category = await categoryModel.getCategory(id);
+    const category = await categoryModel.getCategory(id, include);
     if (!category) {
       return c.json(errorResponse('Category not found!'), { status: 404 });
     }

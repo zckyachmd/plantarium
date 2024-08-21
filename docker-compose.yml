@@ -2,24 +2,26 @@ version: '3.8'
 
 services:
   app:
-    container_name: 'plantarium_app'
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: 'plantarium_app'
     ports:
       - '3000:3000'
-    env_file:
-      - .env
+    environment:
+      DATABASE_URL: postgresql://${DB_USER}:${DB_PASS}@db:5432/${DB_NAME}?schema=public
     depends_on:
       - db
+    volumes:
+      - .:/app
     networks:
       - plantarium_network
 
   db:
-    container_name: 'plantarium_db'
     image: postgres:latest
+    container_name: 'plantarium_db'
     ports:
-      - '${DB_PORT}:5432'
+      - '5432:5432'
     environment:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASS}

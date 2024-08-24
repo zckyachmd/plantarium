@@ -1,0 +1,10 @@
+# Node.js modules
+node_modules
+
+# Direktori git
+.git
+
+# Docker
+compose.yml
+.dockerignore
+.gitignore

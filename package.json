@@ -7,6 +7,8 @@
     "seed": "bun run prisma/seed.ts"
   },
   "dependencies": {
+    "@hono/swagger-ui": "^0.4.1",
+    "@hono/zod-openapi": "^0.15.3",
     "@prisma/client": "^5.18.0",
     "hono": "^4.5.8"
   },

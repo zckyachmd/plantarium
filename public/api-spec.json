@@ -1,0 +1,468 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Plantarium API",
+    "description": "API documentation for Plantarium.  Plantarium is a RESTful API platform offering structured access to diverse plant data. Explore taxonomy, varieties, synonyms, categories, and more in one place!"
+  },
+  "paths": {
+    "/api/categories": {
+      "get": {
+        "summary": "/api/category - All Category Data",
+        "deprecated": false,
+        "description": "",
+        "tags": ["Category"],
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Format: key=value,value,value (Can contain multiple values ​​separated by commas). Example: name=test, testing",
+            "required": false,
+            "example": "",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Format: key=value,value,value (Can contain multiple values ​​separated by commas). Example: name=test, testing",
+            "required": false,
+            "example": "",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "description": "Format: string (Relational table)",
+            "required": false,
+            "example": "",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object", "properties": {} }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "post": {
+        "summary": "/api/category - Create Category",
+        "deprecated": false,
+        "description": "",
+        "tags": ["Category"],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "description": { "type": "string" }
+                },
+                "required": ["name", "description"]
+              },
+              "example": {
+                "name": "Test-Name",
+                "description": "Test-Desription"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object", "properties": {} }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "delete": {
+        "summary": "/api/category - Delete Categories",
+        "deprecated": false,
+        "description": "",
+        "tags": ["Category"],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object", "properties": {} }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/categories/{id}": {
+      "get": {
+        "summary": "/api/category/:id - Get Category by ID",
+        "deprecated": false,
+        "description": "",
+        "tags": ["Category"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object", "properties": {} }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "put": {
+        "summary": "/api/category:id - Update Category By ID",
+        "deprecated": false,
+        "description": "",
+        "tags": ["Category"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "8",
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "description": { "type": "string" }
+                },
+                "required": ["name", "description"]
+              },
+              "example": {
+                "name": "Test-Name",
+                "description": "Test-Description"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object", "properties": {} }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "delete": {
+        "summary": "/api/category/:id - Delete Category by ID",
+        "deprecated": false,
+        "description": "",
+        "tags": ["Category"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "12",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object", "properties": {} }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/taxonomies": {
+      "get": {
+        "summary": "/api/api/taxonomy - All Taxonomy Data",
+        "deprecated": false,
+        "description": "",
+        "tags": ["Taxonomy"],
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Format: key=value,value,value (Can contain multiple values ​​separated by commas). Example: name=test, testing",
+            "required": false,
+            "example": "",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Format: key=value,value,value (Can contain multiple values ​​separated by commas). Example: name=test, testing",
+            "required": false,
+            "example": "",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "description": "Format: string (Relational table)",
+            "required": false,
+            "example": "",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object", "properties": {} }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "post": {
+        "summary": "/api/api/taxonomy - Create Taxonomy",
+        "deprecated": false,
+        "description": "",
+        "tags": ["Taxonomy"],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "kingdom": { "type": "string" },
+                  "phylum": { "type": "string" },
+                  "taxonomyClass": { "type": "string" },
+                  "order": { "type": "string" },
+                  "family": { "type": "string" }
+                },
+                "required": [
+                  "kingdom",
+                  "phylum",
+                  "taxonomyClass",
+                  "order",
+                  "family"
+                ]
+              },
+              "example": "{\n    \"kingdom\": \"Plantae\",\n    \"phylum\": \"Angiosperms\",\n    \"taxonomyClass\": \"Magnoliids\",\n    \"order\": \"Piperales\",\n    \"family\": \"Piperaceae\",\n}"
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object", "properties": {} }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "delete": {
+        "summary": "/api/api/taxonomy - Delete Taxonomies",
+        "deprecated": false,
+        "description": "",
+        "tags": ["Taxonomy"],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object", "properties": {} }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/taxonomies/{id}": {
+      "get": {
+        "summary": "/api/taxonomy/:id - All Taxonomy Data",
+        "deprecated": false,
+        "description": "",
+        "tags": ["Taxonomy"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "description": "Format: string (Relational table)",
+            "required": false,
+            "example": "",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object", "properties": {} }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "put": {
+        "summary": "/api/taxonomy - Update Taxonomy",
+        "deprecated": false,
+        "description": "",
+        "tags": ["Taxonomy"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "5",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Format: key=value,value,value (Can contain multiple values ​​separated by commas). Example: name=test, testing",
+            "required": false,
+            "example": "",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Format: key=value,value,value (Can contain multiple values ​​separated by commas). Example: name=test, testing",
+            "required": false,
+            "example": "",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "description": "Format: string (Relational table)",
+            "required": false,
+            "example": "",
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "kingdom": { "type": "string" },
+                  "phylum": { "type": "string" },
+                  "taxonomyClass": { "type": "string" },
+                  "order": { "type": "string" },
+                  "family": { "type": "string" }
+                },
+                "required": [
+                  "kingdom",
+                  "phylum",
+                  "taxonomyClass",
+                  "order",
+                  "family"
+                ]
+              },
+              "example": {
+                "kingdom": "Plantae",
+                "phylum": "Bryophyta",
+                "taxonomyClass": "Bryopsida",
+                "order": "Hypnales",
+                "family": "Hypnaceae"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object", "properties": {} }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "delete": {
+        "summary": "/api/taxonomy/:id - Delete Taxonomy By ID",
+        "deprecated": false,
+        "description": "",
+        "tags": ["Taxonomy"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object", "properties": {} }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    }
+  }
+}

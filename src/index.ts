@@ -1,27 +1,25 @@
-import { Hono } from "hono";
+import { OpenAPIHono } from "@hono/zod-openapi";
 import { swaggerUI } from "@hono/swagger-ui";
-import { readFileSync } from "fs";
-import { join } from "path";
-import api from "./routes/api";
+import categoriesService from "./services/categoryService";
 
-const app = new Hono();
+const app = new OpenAPIHono();
 
+// Web
 app.get("/", (c) => {
   return c.text("Hello Hono!");
 });
 
+// API
 app.get("/api", swaggerUI({ url: "/api/spec.json" }));
-app.get("/api/spec.json", (c) => {
-  try {
-    const filePath = join(process.cwd(), "public", "api-spec.json");
-    const jsonData = readFileSync(filePath, "utf-8");
-
-    return c.json(JSON.parse(jsonData));
-  } catch (error) {
-    return c.json({ error: "File not found or invalid JSON format" }, 500);
-  }
+app.doc("/api/spec.json", {
+  openapi: "3.1.0",
+  info: {
+    version: "1.0.0",
+    title: "Plantarium API",
+    description:
+      "API documentation for Plantarium. Plantarium is a RESTful API platform offering structured access to diverse plant data. Explore taxonomy, varieties, synonyms, categories, and more in one place!",
+  },
 });
-
-app.route("/api", api);
+app.route("/api/categories", categoriesService);
 
 export default app;

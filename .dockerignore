@@ -5,6 +5,10 @@ node_modules
 .git
 
 # Docker
+docker-compose.yml
 compose.yml
 .dockerignore
 .gitignore
+
+# Cache Bun
+bun.lockb

@@ -5,6 +5,7 @@ import taxonomiesService from "./services/taxonomyService";
 import varietiesService from "./services/varietyService";
 import fs from "fs";
 import path from "path";
+import "./cronjob";
 
 const app = new OpenAPIHono();
 

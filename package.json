@@ -12,6 +12,7 @@
     "@hono/swagger-ui": "^0.4.1",
     "@hono/zod-openapi": "^0.15.3",
     "@prisma/client": "^5.18.0",
+    "@types/node-cron": "^3.0.11",
     "hono": "^4.5.8"
   },
   "devDependencies": {

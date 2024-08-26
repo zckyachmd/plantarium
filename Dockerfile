@@ -29,4 +29,4 @@ COPY .env .env
 EXPOSE 3000
 
 # Start the application
-CMD ["bun", "run", "src/index.ts"]
+CMD ["bun", "run", "src/app.ts"]

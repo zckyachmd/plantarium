@@ -3,12 +3,17 @@ import { OpenAPIHono } from "@hono/zod-openapi";
 import categoriesService from "./services/categoryService";
 import taxonomiesService from "./services/taxonomyService";
 import varietiesService from "./services/varietyService";
+import fs from "fs";
+import path from "path";
 
 const app = new OpenAPIHono();
 
 // Web
 app.get("/", (c) => {
-  return c.text("Hello Hono!");
+  const filePath = path.resolve(__dirname, "../public/index.html");
+  const htmlContent = fs.readFileSync(filePath, "utf-8");
+
+  return c.html(htmlContent);
 });
 
 // API

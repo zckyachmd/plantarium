@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plantarium - Explore Plant Data APIs</title>
+
+  <!-- Styling -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-image: url('https://images.unsplash.com/photo-1512567100135-223e140cd167');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+    }
+
+    .card-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      font-weight: bold;
+      color: #2d3748;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #4a5568;
+    }
+
+    .card-footer {
+      background-color: #f7fafc;
+      padding: 1rem;
+      border-top: 1px solid #e2e8f0;
+      text-align: center;
+      color: #4a5568;
+      margin-top: 2rem;
+      font-size: 0.875rem;
+      border-radius: 0.75rem;
+    }
+
+    a {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: #38a169;
+      color: white;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      margin-top: 1.5rem;
+    }
+
+    a:hover {
+      background-color: #2f855a;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.75rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+
+      a {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card-header">
+      <h1>Welcome to Plantarium</h1>
+      <p>Explore our structured plant data API platform where you can discover various plant categories, taxonomies, and
+        more.</p>
+      <a href="/api">Explore API Documentation</a>
+    </div>
+
+    <div class="card-footer">
+      Data is reset daily at 00:00 to ensure freshness.
+    </div>
+  </div>
+</body>
+
+</html>

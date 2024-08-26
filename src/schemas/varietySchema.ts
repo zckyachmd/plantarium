@@ -1,38 +1,39 @@
 import { z } from "@hono/zod-openapi";
 import { IdSchema } from "./categorySchema";
 
-const synonymsSchema = z.array(z.string()).openapi({
-  description: "A list of synonyms for the variety",
-  example: ["Synonym1", "Synonym2"],
-});
+export const IdVarietySchema = IdSchema;
 
 export const VarietySchema = z
   .object({
     id: IdSchema,
     name: z.string().min(1, "Name is required").openapi({
       description: "The name of the variety",
-      example: "Golden Rice",
+      example: "Mango",
     }),
     scientificName: z.string().min(1, "Scientific name is required").openapi({
       description: "The scientific name of the variety",
-      example: "Oryza sativa",
+      example: "Mangifera indica",
     }),
     description: z.string().optional().nullable().openapi({
       description: "A description of the variety",
-      example: "A high-yielding variety of rice",
+      example:
+        "A tropical fruit known for its sweet, juicy flesh and large seed.",
     }),
     origin: z.string().min(1, "Origin is required").openapi({
       description: "The origin of the variety",
-      example: "Southeast Asia",
+      example: "South Asia",
     }),
-    synonyms: synonymsSchema.optional(),
+    synonyms: z.array(z.string()).openapi({
+      description: "A list of synonyms for the variety",
+      example: ["Synonym1", "Synonym2"],
+    }),
     genus: z.string().min(1, "Genus is required").openapi({
       description: "The genus of the variety",
-      example: "Oryza",
+      example: "Mangifera",
     }),
     species: z.string().min(1, "Species is required").openapi({
       description: "The species of the variety",
-      example: "sativa",
+      example: "M. indica",
     }),
     taxonomyId: IdSchema,
     createdAt: z.date().optional().openapi({
@@ -64,7 +65,7 @@ export const QueryVarietySchema = z
   .object({
     filter: z.string().optional().openapi({
       description: "Filter criteria for querying varieties",
-      example: "name=Golden Rice",
+      example: "name=Mango",
     }),
     sort: z.string().optional().openapi({
       description: "Sort criteria for querying varieties",

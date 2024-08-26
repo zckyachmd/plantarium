@@ -132,6 +132,7 @@ category.openapi(categoryRoute.createCategory, async (c) => {
         }
 
         const newCategory = await categoryModel.createCategory(validatedBody);
+
         return c.json(
           responseUtils.successResponse(
             "Category created successfully",
@@ -164,9 +165,7 @@ category.openapi(categoryRoute.updateCategory, async (c) => {
     async (validatedBody) => {
       try {
         const [existingCategory, conflictingCategory] = await Promise.all([
-          categoryModel.prisma.category.findUnique({
-            where: { id },
-          }),
+          categoryModel.getCategory(id),
           categoryModel.prisma.category.findFirst({
             where: {
               name: validatedBody.name,
@@ -226,10 +225,13 @@ category.openapi(categoryRoute.deleteCategory, async (c) => {
         });
       }
 
-      await categoryModel.deleteCategory(id);
+      const deletedCategory = await categoryModel.deleteCategory(id);
 
       return c.json(
-        responseUtils.successResponse("Category deleted successfully")
+        responseUtils.successResponse(
+          "Category deleted successfully",
+          deletedCategory
+        )
       );
     } catch (error) {
       return responseUtils.handleErrors(
@@ -244,9 +246,13 @@ category.openapi(categoryRoute.deleteCategory, async (c) => {
 category.openapi(categoryRoute.deleteCategories, async (c) => {
   return handleRequest(c, categorySchema.QueryCategorySchema, {}, async () => {
     try {
-      await categoryModel.deleteCategories();
+      const deleteCategories = await categoryModel.deleteCategories();
+      
       return c.json(
-        responseUtils.successResponse("Categories deleted successfully")
+        responseUtils.successResponse(
+          "Categories deleted successfully",
+          deleteCategories
+        )
       );
     } catch (error) {
       return responseUtils.handleErrors(

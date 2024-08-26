@@ -142,6 +142,7 @@ taxonomy.openapi(taxonomyRoute.createTaxonomy, async (c) => {
         }
 
         const newTaxonomy = await taxonomyModel.createTaxonomy(body);
+        
         return c.json(
           responseUtils.successResponse(
             "Taxonomy created successfully",
@@ -176,9 +177,7 @@ taxonomy.openapi(taxonomyRoute.updateTaxonomy, async (c) => {
     async (validatedBody) => {
       try {
         const [existingTaxonomy, conflictingTaxonomy] = await Promise.all([
-          taxonomyModel.prisma.taxonomy.findUnique({
-            where: { id },
-          }),
+          taxonomyModel.getTaxonomy(id),
           taxonomyModel.prisma.taxonomy.findFirst({
             where: {
               kingdom: validatedBody.kingdom,
@@ -212,6 +211,7 @@ taxonomy.openapi(taxonomyRoute.updateTaxonomy, async (c) => {
           id,
           validatedBody
         );
+
         return c.json(
           responseUtils.successResponse(
             "Taxonomy updated successfully",
@@ -266,9 +266,13 @@ taxonomy.openapi(taxonomyRoute.deleteTaxonomy, async (c) => {
 taxonomy.openapi(taxonomyRoute.deleteTaxonomies, async (c) => {
   return handleRequest(c, taxonomySchema.QueryTaxonomySchema, {}, async () => {
     try {
-      await taxonomyModel.deleteTaxonomies();
+      const deletedTaxonomies = await taxonomyModel.deleteTaxonomies();
+
       return c.json(
-        responseUtils.successResponse("All taxonomies deleted successfully")
+        responseUtils.successResponse(
+          "All taxonomies deleted successfully",
+          deletedTaxonomies
+        )
       );
     } catch (error) {
       return responseUtils.handleErrors(

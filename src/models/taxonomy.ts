@@ -2,9 +2,9 @@ import {
   Prisma,
   PrismaClient,
   Taxonomy as PrismaTaxonomy,
-} from '@prisma/client';
-import { buildQueryOptions } from '../utils/prismaUtils';
-import { parseInclude } from '../utils/stringUtils';
+} from "@prisma/client";
+import { buildQueryOptions } from "../utils/prismaUtils";
+import { parseInclude } from "../utils/stringUtils";
 
 export const prisma = new PrismaClient();
 
@@ -18,20 +18,17 @@ export const prisma = new PrismaClient();
  */
 export async function getTaxonomies(
   filters: Record<string, any> = {},
-  sort: Record<string, 'asc' | 'desc'> = {},
+  sort: Record<string, "asc" | "desc"> = {},
   include?: string
 ): Promise<PrismaTaxonomy[]> {
-  // Handle include
   const includeConditions = include ? parseInclude(include) : {};
-
-  // Handle filtering
   const queryOptions = buildQueryOptions(filters, sort, includeConditions);
 
   try {
     return await prisma.taxonomy.findMany(queryOptions);
   } catch (error) {
-    console.error('Error retrieving taxonomies:', error);
-    throw new Error('An error occurred while retrieving taxonomies.');
+    console.error("Error retrieving taxonomies:", error);
+    throw new Error("An error occurred while retrieving taxonomies.");
   }
 }
 
@@ -46,11 +43,6 @@ export async function getTaxonomy(
   id: number,
   include?: string
 ): Promise<PrismaTaxonomy | null> {
-  if (isNaN(id)) {
-    throw new Error('Invalid ID!');
-  }
-
-  // Handle include
   const includeConditions = include ? parseInclude(include) : {};
 
   return prisma.taxonomy.findUnique({

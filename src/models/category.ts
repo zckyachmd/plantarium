@@ -2,9 +2,9 @@ import {
   Prisma,
   PrismaClient,
   Category as PrismaCategory,
-} from '@prisma/client';
-import { buildQueryOptions } from '../utils/prismaUtils';
-import { parseInclude } from '../utils/stringUtils';
+} from "@prisma/client";
+import { buildQueryOptions } from "../utils/prismaUtils";
+import { parseInclude } from "../utils/stringUtils";
 
 export const prisma = new PrismaClient();
 
@@ -18,20 +18,17 @@ export const prisma = new PrismaClient();
  */
 export async function getCategories(
   filters: Record<string, any> = {},
-  sort: Record<string, 'asc' | 'desc'> = {},
+  sort: Record<string, "asc" | "desc"> = {},
   include?: string
 ): Promise<PrismaCategory[]> {
-  // Handle include
   const includeConditions = include ? parseInclude(include) : {};
-
-  // Handle filtering
   const queryOptions = buildQueryOptions(filters, sort, includeConditions);
 
   try {
     return await prisma.category.findMany(queryOptions);
   } catch (error) {
-    console.error('Error retrieving categories:', error);
-    throw new Error('An error occurred while retrieving categories.');
+    console.error("Error retrieving categories:", error);
+    throw new Error("An error occurred while retrieving categories.");
   }
 }
 
@@ -46,11 +43,6 @@ export async function getCategory(
   id: number,
   include?: string
 ): Promise<PrismaCategory | null> {
-  if (isNaN(id)) {
-    throw new Error('Invalid ID!');
-  }
-
-  // Handle include
   const includeConditions = include ? parseInclude(include) : {};
 
   return prisma.category.findUnique({

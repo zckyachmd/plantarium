@@ -24,19 +24,6 @@ export const getTaxonomies = createRoute({
         },
       },
     },
-    404: {
-      description: "Taxonomies not found.",
-      content: {
-        "application/json": {
-          schema: errorResponseSchema
-            .extend({
-              errorCode: z.string().default("TAXONOMIES_NOT_FOUND"),
-              message: z.string().default("Taxonomies not found."),
-            })
-            .openapi("GetTaxonomiesErrorResponse"),
-        },
-      },
-    },
     400: {
       description:
         "Invalid request due to incorrect parameters or data format.",
@@ -48,6 +35,19 @@ export const getTaxonomies = createRoute({
               message: z
                 .string()
                 .default("The data parameter must be in key=value format."),
+            })
+            .openapi("GetTaxonomiesErrorResponse"),
+        },
+      },
+    },
+    404: {
+      description: "Taxonomies not found.",
+      content: {
+        "application/json": {
+          schema: errorResponseSchema
+            .extend({
+              errorCode: z.string().default("TAXONOMIES_NOT_FOUND"),
+              message: z.string().default("Taxonomies not found."),
             })
             .openapi("GetTaxonomiesErrorResponse"),
         },
@@ -76,19 +76,6 @@ export const getTaxonomy = createRoute({
         },
       },
     },
-    404: {
-      description: "Taxonomy not found.",
-      content: {
-        "application/json": {
-          schema: errorResponseSchema
-            .extend({
-              errorCode: z.string().default("TAXONOMY_NOT_FOUND"),
-              message: z.string().default("Taxonomy not found."),
-            })
-            .openapi("GetCategoryErrorResponse"),
-        },
-      },
-    },
     400: {
       description:
         "Invalid request due to incorrect parameters or data format.",
@@ -100,6 +87,19 @@ export const getTaxonomy = createRoute({
               message: z
                 .string()
                 .default("The data parameter must be in key=value format."),
+            })
+            .openapi("GetCategoryErrorResponse"),
+        },
+      },
+    },
+    404: {
+      description: "Taxonomy not found.",
+      content: {
+        "application/json": {
+          schema: errorResponseSchema
+            .extend({
+              errorCode: z.string().default("TAXONOMY_NOT_FOUND"),
+              message: z.string().default("Taxonomy not found."),
             })
             .openapi("GetCategoryErrorResponse"),
         },

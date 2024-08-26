@@ -1,7 +1,8 @@
-import { OpenAPIHono } from "@hono/zod-openapi";
 import { swaggerUI } from "@hono/swagger-ui";
+import { OpenAPIHono } from "@hono/zod-openapi";
 import categoriesService from "./services/categoryService";
 import taxonomiesService from "./services/taxonomyService";
+import varietiesService from "./services/varietyService";
 
 const app = new OpenAPIHono();
 
@@ -21,7 +22,10 @@ app.doc("/api/spec.json", {
       "API documentation for Plantarium. Plantarium is a RESTful API platform offering structured access to diverse plant data. Explore taxonomy, varieties, synonyms, categories, and more in one place!",
   },
 });
+
+// Define API routes
 app.route("/api/categories", categoriesService);
 app.route("/api/taxonomies", taxonomiesService);
+app.route("/api/varieties", varietiesService);
 
 export default app;

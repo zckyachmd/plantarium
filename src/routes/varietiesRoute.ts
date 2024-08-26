@@ -1,26 +1,26 @@
 import { z } from "@hono/zod-openapi";
 import { createRoute } from "@hono/zod-openapi";
 import { errorResponseSchema } from "../schemas/errorSchema";
-import * as categorySchema from "../schemas/categorySchema";
+import * as varietySchema from "../schemas/varietySchema";
 
-const API_TAGS = ["Categories"];
+const API_TAGS = ["Varieties"];
 
-export const getCategories = createRoute({
+export const getVarieties = createRoute({
   method: "get",
   path: "/",
-  summary: "Retrieve a list of categories",
+  summary: "Retrieve a list of varieties",
   description:
-    "Fetches categories based on optional query parameters. Supports filtering and including related tables.",
+    "Fetches varieties based on optional query parameters. Supports filtering and including related tables.",
   request: {
-    query: categorySchema.QueryCategorySchema,
+    query: varietySchema.QueryVarietySchema,
   },
   tags: API_TAGS,
   responses: {
     200: {
-      description: "List of categories.",
+      description: "List of varieties.",
       content: {
         "application/json": {
-          schema: z.array(categorySchema.CategorySchema),
+          schema: z.array(varietySchema.VarietySchema),
         },
       },
     },
@@ -36,30 +36,30 @@ export const getCategories = createRoute({
                 .string()
                 .default("The filter parameter must be in key=value format."),
             })
-            .openapi("GetCategoriesErrorResponse"),
+            .openapi("GetVarietiesErrorResponse"),
         },
       },
     },
   },
 });
 
-export const getCategory = createRoute({
+export const getVariety = createRoute({
   method: "get",
   path: "/{id}",
-  summary: "Retrieve a category by ID",
-  description: "Fetches a single category using its ID.",
+  summary: "Retrieve a variety by ID",
+  description: "Fetches a single variety using its ID.",
   request: {
     params: z.object({
-      id: categorySchema.IdSchema,
+      id: varietySchema.IdVarietySchema,
     }),
   },
   tags: API_TAGS,
   responses: {
     200: {
-      description: "Taxonomy retrieved successfully.",
+      description: "Variety retrieved successfully.",
       content: {
         "application/json": {
-          schema: categorySchema.CategorySchema,
+          schema: varietySchema.VarietySchema,
         },
       },
     },
@@ -75,36 +75,36 @@ export const getCategory = createRoute({
                 .string()
                 .default("The filter parameter must be in key=value format."),
             })
-            .openapi("GetCategoryErrorResponse"),
+            .openapi("GetVarietyErrorResponse"),
         },
       },
     },
     404: {
-      description: "Category not found.",
+      description: "Variety not found.",
       content: {
         "application/json": {
           schema: errorResponseSchema
             .extend({
-              errorCode: z.string().default("CATEGORY_NOT_FOUND"),
-              message: z.string().default("Category not found."),
+              errorCode: z.string().default("VARIETY_NOT_FOUND"),
+              message: z.string().default("Variety not found."),
             })
-            .openapi("GetCategoryErrorResponse"),
+            .openapi("GetVarietyErrorResponse"),
         },
       },
     },
   },
 });
 
-export const createCategory = createRoute({
+export const createVariety = createRoute({
   method: "post",
   path: "/",
-  summary: "Create a new category",
-  description: "Creates a new category in the database.",
+  summary: "Create a new variety",
+  description: "Creates a new variety.",
   request: {
     body: {
       content: {
         "application/json": {
-          schema: categorySchema.CreateCategorySchema,
+          schema: varietySchema.CreateVarietySchema,
         },
       },
     },
@@ -112,10 +112,10 @@ export const createCategory = createRoute({
   tags: API_TAGS,
   responses: {
     201: {
-      description: "Category created successfully.",
+      description: "Variety created successfully.",
       content: {
         "application/json": {
-          schema: categorySchema.CategorySchema,
+          schema: varietySchema.VarietySchema,
         },
       },
     },
@@ -129,36 +129,28 @@ export const createCategory = createRoute({
               errorCode: z.string().default("INVALID_DATA_FORMAT"),
               message: z
                 .string()
-                .default("The data parameter must be in key=value format."),
-              errors: z
-                .array(
-                  z.object({
-                    field: z.string(),
-                    message: z.string(),
-                  })
-                )
-                .optional(),
+                .default("The data provided is not in the correct format."),
             })
-            .openapi("CreateCategoryErrorResponse"),
+            .openapi("CreateVarietyErrorResponse"),
         },
       },
     },
   },
 });
 
-export const updateCategory = createRoute({
+export const updateVariety = createRoute({
   method: "put",
   path: "/{id}",
-  summary: "Update a category by ID",
-  description: "Updates a single category using its ID.",
+  summary: "Update a variety by ID",
+  description: "Updates a single variety using its ID.",
   request: {
     params: z.object({
-      id: categorySchema.IdSchema,
+      id: varietySchema.IdVarietySchema,
     }),
     body: {
       content: {
         "application/json": {
-          schema: categorySchema.CreateCategorySchema,
+          schema: varietySchema.UpdateVarietySchema,
         },
       },
     },
@@ -166,10 +158,10 @@ export const updateCategory = createRoute({
   tags: API_TAGS,
   responses: {
     200: {
-      description: "Category updated successfully.",
+      description: "Variety updated successfully.",
       content: {
         "application/json": {
-          schema: categorySchema.CategorySchema,
+          schema: varietySchema.VarietySchema,
         },
       },
     },
@@ -183,99 +175,91 @@ export const updateCategory = createRoute({
               errorCode: z.string().default("INVALID_DATA_FORMAT"),
               message: z
                 .string()
-                .default("The data parameter must be in key=value format."),
-              errors: z
-                .array(
-                  z.object({
-                    field: z.string(),
-                    message: z.string(),
-                  })
-                )
-                .optional(),
+                .default("The data provided is not in the correct format."),
             })
-            .openapi("UpdateCategoryInvalidRequestResponse"),
+            .openapi("UpdateVarietyErrorResponse"),
         },
       },
     },
     404: {
-      description: "Category not found.",
+      description: "Variety not found.",
       content: {
         "application/json": {
           schema: errorResponseSchema
             .extend({
-              errorCode: z.string().default("CATEGORY_NOT_FOUND"),
-              message: z.string().default("Category not found."),
+              errorCode: z.string().default("VARIETY_NOT_FOUND"),
+              message: z.string().default("Variety not found."),
             })
-            .openapi("UpdateCategoryErrorResponse"),
+            .openapi("UpdateVarietyErrorResponse"),
         },
       },
     },
     409: {
-      description: "Conflict due to existing category with the same name.",
+      description: "Conflict due to existing variety with the same name.",
       content: {
         "application/json": {
           schema: errorResponseSchema
             .extend({
-              errorCode: z.string().default("CATEGORY_CONFLICT"),
+              errorCode: z.string().default("VARIETY_CONFLICT"),
               message: z
                 .string()
-                .default("A category with the same name already exists."),
+                .default("A variety with the same name already exists."),
             })
-            .openapi("UpdateCategoryConflictResponse"),
+            .openapi("UpdateVarietyErrorResponse"),
         },
       },
     },
   },
 });
 
-export const deleteCategory = createRoute({
+export const deleteVariety = createRoute({
   method: "delete",
   path: "/{id}",
-  summary: "Delete a category by ID",
-  description: "Deletes a single category using its ID.",
+  summary: "Delete a variety by ID",
+  description: "Deletes a single variety using its ID.",
   request: {
     params: z.object({
-      id: categorySchema.IdSchema,
+      id: varietySchema.IdVarietySchema,
     }),
   },
   tags: API_TAGS,
   responses: {
     200: {
-      description: "Category deleted successfully.",
+      description: "Variety deleted successfully.",
       content: {
         "application/json": {
-          schema: categorySchema.CategorySchema,
+          schema: varietySchema.VarietySchema,
         },
       },
     },
     404: {
-      description: "Category not found.",
+      description: "Variety not found.",
       content: {
         "application/json": {
           schema: errorResponseSchema
             .extend({
-              errorCode: z.string().default("CATEGORY_NOT_FOUND"),
-              message: z.string().default("Category not found."),
+              errorCode: z.string().default("VARIETY_NOT_FOUND"),
+              message: z.string().default("Variety not found."),
             })
-            .openapi("DeleteCategoryErrorResponse"),
+            .openapi("DeleteVarietyErrorResponse"),
         },
       },
     },
   },
 });
 
-export const deleteCategories = createRoute({
+export const deleteVarieties = createRoute({
   method: "delete",
   path: "/",
-  summary: "Delete all categories",
-  description: "Deletes all categories using an array of IDs.",
+  summary: "Delete all varieties",
+  description: "Deletes all varieties.",
   tags: API_TAGS,
   responses: {
     200: {
-      description: "Categories deleted successfully.",
+      description: "All varieties deleted successfully.",
       content: {
         "application/json": {
-          schema: z.array(categorySchema.CategorySchema),
+          schema: z.array(varietySchema.VarietySchema),
         },
       },
     },

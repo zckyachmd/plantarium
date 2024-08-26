@@ -65,7 +65,7 @@ variety.openapi(varietyRoute.getVarieties, async (c) => {
         return responseUtils.handleErrors(
           c,
           error,
-          "An error occurred while retrieving categories"
+          "An error occurred while retrieving taxonomies"
         );
       }
     }

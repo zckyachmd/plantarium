@@ -1,7 +1,13 @@
 import { z } from "@hono/zod-openapi";
 import { IdSchema } from "./categorySchema";
 
-export const IdTaxonomySchema = IdSchema;
+export const IdTaxonomySchema = IdSchema.openapi({
+  param: {
+    name: "id",
+    in: "path",
+    description: "The unique identifier for the taxonomy",
+  },
+});
 
 export const TaxonomySchema = z
   .object({

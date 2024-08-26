@@ -2,13 +2,21 @@
 
 **Plantarium** is a RESTful API platform designed to provide comprehensive and structured access to a collection of plant data. This project aims to be a primary source of plant information with detailed features including taxonomy, varieties, synonyms, categories, and specific collections.
 
+<summary>
+Entity-Relationship Diagram
+<details>
+
+![ERD](public/ERD.png)
+
+</details>
+</summary>
+
 ## Features
 
 - **Advanced Search**: Supports keyword search, category-based filtering, and advanced search functionalities for easy plant discovery.
-- **Pagination and Filtering**: Provides efficient pagination and filtering methods to handle and navigate large datasets.
 - **Relational Data**: Manages relationships between plants, varieties, synonyms, and categories to offer complete and contextual information.
 - **JSON API Design**: Adheres to JSON API standards to ensure consistency and interoperability in data communication.
-- **Documentation and Logging**: Supported by Swagger for API documentation and Winston for logging, ensuring transparency and ease of maintenance.
+- **Documentation**: Supported by Swagger for API documentation, ensuring transparency and ease of maintenance.
 
 ## Goals
 
@@ -21,39 +29,39 @@
 - **Backend**: Hono with Bun and TypeScript
 - **Database**: PostgreSQL with Prisma ORM
 - **API Documentation**: Swagger
-- **Logging**: Winston
 
 ## Installation
 
-1. **Clone the Repository and Install Dependencies**
-   To get started with Plantarium, clone the repository and install the dependencies:
+1.  **Clone the Repository and Install Dependencies**
+    To get started with Plantarium, clone the repository and install the dependencies:
 
-   ```bash
-   git clone https://github.com/zckyachmd/plantarium.git
-   cd plantarium
-   bun install
-   ```
+    ```bash
+    git clone https://github.com/zckyachmd/plantarium.git
+    cd plantarium
+    bun install
+    ```
 
-2. **Create .env File**
-To set up your database connection string and other environment variables, create a `.env` file in the root directory of your project.
+2.  **Create .env File**
+    To set up your database connection string and other environment variables, create a `.env` file in the root directory of your project.
 
-   ```bash
-    cp .env.example .env
-   ```
+    ```bash
+     cp .env.example .env
+    ```
 
-    Edit .env to set up your database connection string and other environment variables.
+        Edit .env to set up your database connection string and other environment variables.
 
-3. Run Migrations and Seed
-   Create and run migrations the following commands:
+3.  Run Migrations and Seed
+    Create and run migrations the following commands:
 
-   ```bash
-   bun run prisma migrate dev --name init
-   ```
+    ```bash
+    bun run prisma migrate dev --name init
+    ```
 
-   Seed data using the following command (optional):
-   ```bash
-   bun run prisma db seed
-   ```
+    Seed data using the following command (optional):
+
+    ```bash
+    bun run prisma db seed
+    ```
 
 ### Usage
 

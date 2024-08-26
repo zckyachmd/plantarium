@@ -1,7 +1,13 @@
 import { z } from "@hono/zod-openapi";
 import { IdSchema } from "./categorySchema";
 
-export const IdVarietySchema = IdSchema;
+export const IdVarietySchema = IdSchema.openapi({
+  param: {
+    name: "id",
+    in: "path",
+    description: "The unique identifier for the variety",
+  },
+});
 
 export const VarietySchema = z
   .object({

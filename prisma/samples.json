@@ -1249,5 +1249,481 @@
       "family": "Asparagaceae"
     },
     "categories": ["Succulent"]
+  },
+  {
+    "name": "Sweet Potato",
+    "scientificName": "Ipomoea batatas",
+    "description": "A starchy root vegetable with a sweet taste, commonly used in cooking and baking.",
+    "origin": "Central and South America",
+    "synonyms": ["Yam Bean"],
+    "genus": "Ipomoea",
+    "species": "I. batatas",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Solanales",
+      "family": "Convolvulaceae"
+    },
+    "categories": ["Root Vegetable"]
+  },
+  {
+    "name": "Zucchini",
+    "scientificName": "Cucurbita pepo",
+    "description": "A summer squash with tender, edible skin and a mild flavor, often used in cooking.",
+    "origin": "Americas",
+    "synonyms": ["Courgette"],
+    "genus": "Cucurbita",
+    "species": "C. pepo",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Cucurbitales",
+      "family": "Cucurbitaceae"
+    },
+    "categories": ["Vegetable"]
+  },
+  {
+    "name": "Artichoke",
+    "scientificName": "Cynara scolymus",
+    "description": "A thistle-like vegetable known for its edible buds and unique flavor.",
+    "origin": "Mediterranean",
+    "synonyms": ["Globe Artichoke"],
+    "genus": "Cynara",
+    "species": "C. scolymus",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Asterales",
+      "family": "Asteraceae"
+    },
+    "categories": ["Vegetable"]
+  },
+  {
+    "name": "Papaya",
+    "scientificName": "Carica papaya",
+    "description": "A tropical fruit with sweet, orange flesh and edible seeds.",
+    "origin": "Central America",
+    "synonyms": ["Pawpaw"],
+    "genus": "Carica",
+    "species": "C. papaya",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Caricales",
+      "family": "Caricaceae"
+    },
+    "categories": ["Fruit"]
+  },
+  {
+    "name": "Durian",
+    "scientificName": "Durio spp.",
+    "description": "A tropical fruit with a strong odor and creamy, custard-like flesh.",
+    "origin": "Southeast Asia",
+    "synonyms": ["Durian"],
+    "genus": "Durio",
+    "species": "D. spp.",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Malvales",
+      "family": "Malvaceae"
+    },
+    "categories": ["Fruit"]
+  },
+  {
+    "name": "Salak",
+    "scientificName": "Salacca zalacca",
+    "description": "A tropical fruit with scaly skin and sweet, tangy flesh.",
+    "origin": "Indonesia",
+    "synonyms": ["Snake Fruit"],
+    "genus": "Salacca",
+    "species": "S. zalacca",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Monocotyledons",
+      "order": "Arecales",
+      "family": "Arecaceae"
+    },
+    "categories": ["Fruit"]
+  },
+  {
+    "name": "Rambutan",
+    "scientificName": "Nephelium lappaceum",
+    "description": "A tropical fruit with hairy skin and sweet, juicy flesh.",
+    "origin": "Malay-Indonesian region",
+    "synonyms": ["Rambutan"],
+    "genus": "Nephelium",
+    "species": "N. lappaceum",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Sapindales",
+      "family": "Sapindaceae"
+    },
+    "categories": ["Fruit"]
+  },
+  {
+    "name": "Mangosteen",
+    "scientificName": "Garcinia mangostana",
+    "description": "A tropical fruit with a thick, purple rind and juicy, sweet flesh.",
+    "origin": "Southeast Asia",
+    "synonyms": ["Mangosteen"],
+    "genus": "Garcinia",
+    "species": "G. mangostana",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Clusiales",
+      "family": "Clusiaceae"
+    },
+    "categories": ["Fruit"]
+  },
+  {
+    "name": "Cempedak",
+    "scientificName": "Artocarpus integer",
+    "description": "A tropical fruit related to jackfruit, with a sweet, fibrous flesh.",
+    "origin": "Indonesia",
+    "synonyms": ["Cempedak"],
+    "genus": "Artocarpus",
+    "species": "A. integer",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Rosales",
+      "family": "Moraceae"
+    },
+    "categories": ["Fruit"]
+  },
+  {
+    "name": "Pandanus",
+    "scientificName": "Pandanus amaryllifolius",
+    "description": "A tropical plant known for its fragrant leaves used in cooking.",
+    "origin": "Southeast Asia",
+    "synonyms": ["Pandan"],
+    "genus": "Pandanus",
+    "species": "P. amaryllifolius",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Monocotyledons",
+      "order": "Pandanales",
+      "family": "Pandanaceae"
+    },
+    "categories": ["Herb"]
+  },
+  {
+    "name": "Soursop",
+    "scientificName": "Annona muricata",
+    "description": "A tropical fruit with spiky green skin and sweet, creamy flesh.",
+    "origin": "Tropical America",
+    "synonyms": ["Graviola"],
+    "genus": "Annona",
+    "species": "A. muricata",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Magnoliales",
+      "family": "Annonaceae"
+    },
+    "categories": ["Fruit"]
+  },
+  {
+    "name": "Starfruit",
+    "scientificName": "Averrhoa carambola",
+    "description": "A tropical fruit with a star-like shape and tart, tangy flavor.",
+    "origin": "Southeast Asia",
+    "synonyms": ["Carambola"],
+    "genus": "Averrhoa",
+    "species": "A. carambola",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Oxalidales",
+      "family": "Oxalidaceae"
+    },
+    "categories": ["Fruit"]
+  },
+  {
+    "name": "Chili Pepper",
+    "scientificName": "Capsicum annuum",
+    "description": "A spicy fruit used to add heat to dishes, with various varieties ranging from mild to hot.",
+    "origin": "Central and South America",
+    "synonyms": ["Chili"],
+    "genus": "Capsicum",
+    "species": "C. annuum",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Solanales",
+      "family": "Solanaceae"
+    },
+    "categories": ["Spice"]
+  },
+  {
+    "name": "Eggplant",
+    "scientificName": "Solanum melongena",
+    "description": "A vegetable with glossy skin and a spongy texture, used in various cuisines.",
+    "origin": "India",
+    "synonyms": ["Aubergine"],
+    "genus": "Solanum",
+    "species": "S. melongena",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Solanales",
+      "family": "Solanaceae"
+    },
+    "categories": ["Vegetable"]
+  },
+  {
+    "name": "Kangkung",
+    "scientificName": "Ipomoea aquatica",
+    "description": "A water spinach commonly used in Southeast Asian cuisine, known for its tender leaves.",
+    "origin": "Southeast Asia",
+    "synonyms": ["Water Spinach"],
+    "genus": "Ipomoea",
+    "species": "I. aquatica",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Convolvulales",
+      "family": "Convolvulaceae"
+    },
+    "categories": ["Leafy Green"]
+  },
+  {
+    "name": "Long Bean",
+    "scientificName": "Vigna unguiculata",
+    "description": "A legume known for its long, slender pods and crunchy texture, often used in stir-fries.",
+    "origin": "Africa",
+    "synonyms": ["Yardlong Bean"],
+    "genus": "Vigna",
+    "species": "V. unguiculata",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Fabales",
+      "family": "Fabaceae"
+    },
+    "categories": ["Legume"]
+  },
+  {
+    "name": "Celery",
+    "scientificName": "Apium graveolens",
+    "description": "A vegetable with crisp stalks and a distinctive, slightly bitter flavor, used in soups and salads.",
+    "origin": "Mediterranean region",
+    "synonyms": ["Celery"],
+    "genus": "Apium",
+    "species": "A. graveolens",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Apiales",
+      "family": "Apiaceae"
+    },
+    "categories": ["Vegetable"]
+  },
+  {
+    "name": "Arabica Coffee",
+    "scientificName": "Coffea arabica",
+    "description": "A coffee species known for its smooth flavor and aromatic qualities, commonly grown at high altitudes.",
+    "origin": "Ethiopia",
+    "synonyms": ["Arabian Coffee"],
+    "genus": "Coffea",
+    "species": "C. arabica",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Gentianales",
+      "family": "Rubiaceae"
+    },
+    "categories": ["Coffee"]
+  },
+  {
+    "name": "Robusta Coffee",
+    "scientificName": "Coffea canephora",
+    "description": "A coffee species known for its strong flavor and higher caffeine content, often grown at lower altitudes.",
+    "origin": "Central Africa",
+    "synonyms": ["Robusta Coffee"],
+    "genus": "Coffea",
+    "species": "C. canephora",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Gentianales",
+      "family": "Rubiaceae"
+    },
+    "categories": ["Coffee"]
+  },
+  {
+    "name": "Liberica Coffee",
+    "scientificName": "Coffea liberica",
+    "description": "A coffee species with a distinct flavor profile and larger beans, less commonly grown but notable in certain regions.",
+    "origin": "West Africa",
+    "synonyms": ["Liberica Coffee"],
+    "genus": "Coffea",
+    "species": "C. liberica",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Gentianales",
+      "family": "Rubiaceae"
+    },
+    "categories": ["Coffee"]
+  },
+  {
+    "name": "Excelsa Coffee",
+    "scientificName": "Coffea excelsa",
+    "description": "A less common coffee species with unique flavor notes, known for its large fruit and distinctive characteristics.",
+    "origin": "Central Africa",
+    "synonyms": ["Excelsa Coffee"],
+    "genus": "Coffea",
+    "species": "C. excelsa",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Gentianales",
+      "family": "Rubiaceae"
+    },
+    "categories": ["Coffee"]
+  },
+  {
+    "name": "Bourbon Coffee",
+    "scientificName": "Coffea arabica",
+    "description": "A variety of Arabica coffee known for its complex flavor and high quality, often grown in specific regions.",
+    "origin": "Reunion Island",
+    "synonyms": ["Bourbon"],
+    "genus": "Coffea",
+    "species": "C. arabica",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Gentianales",
+      "family": "Rubiaceae"
+    },
+    "categories": ["Coffee"]
+  },
+  {
+    "name": "Typica Coffee",
+    "scientificName": "Coffea arabica",
+    "description": "A variety of Arabica coffee that is the basis for many other coffee varieties, known for its balanced flavor.",
+    "origin": "Ethiopia",
+    "synonyms": ["Typica"],
+    "genus": "Coffea",
+    "species": "C. arabica",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Gentianales",
+      "family": "Rubiaceae"
+    },
+    "categories": ["Coffee"]
+  },
+  {
+    "name": "Geisha Coffee",
+    "scientificName": "Coffea arabica",
+    "description": "A highly prized coffee variety known for its floral and jasmine-like aroma, often grown at high elevations.",
+    "origin": "Ethiopia",
+    "synonyms": ["Geisha"],
+    "genus": "Coffea",
+    "species": "C. arabica",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Gentianales",
+      "family": "Rubiaceae"
+    },
+    "categories": ["Coffee"]
+  },
+  {
+    "name": "Pacamara Coffee",
+    "scientificName": "Coffea arabica",
+    "description": "A hybrid coffee variety known for its large beans and unique flavor profile, a cross between Pacas and Maragogipe.",
+    "origin": "El Salvador",
+    "synonyms": ["Pacamara"],
+    "genus": "Coffea",
+    "species": "C. arabica",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Gentianales",
+      "family": "Rubiaceae"
+    },
+    "categories": ["Coffee"]
+  },
+  {
+    "name": "SL28 Coffee",
+    "scientificName": "Coffea arabica",
+    "description": "A Kenyan coffee variety known for its resistance to disease and high quality, producing a rich, fruity flavor.",
+    "origin": "Kenya",
+    "synonyms": ["SL28"],
+    "genus": "Coffea",
+    "species": "C. arabica",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Gentianales",
+      "family": "Rubiaceae"
+    },
+    "categories": ["Coffee"]
+  },
+  {
+    "name": "SL34 Coffee",
+    "scientificName": "Coffea arabica",
+    "description": "Another Kenyan coffee variety known for its durability and complex flavors, developed to withstand disease.",
+    "origin": "Kenya",
+    "synonyms": ["SL34"],
+    "genus": "Coffea",
+    "species": "C. arabica",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Gentianales",
+      "family": "Rubiaceae"
+    },
+    "categories": ["Coffee"]
+  },
+  {
+    "name": "Kopiplan Coffee",
+    "scientificName": "Coffea robusta",
+    "description": "A local Indonesian coffee variety known for its strong and robust flavor, often grown in traditional coffee farms.",
+    "origin": "Indonesia",
+    "synonyms": ["Kopiplan"],
+    "genus": "Coffea",
+    "species": "C. robusta",
+    "taxonomy": {
+      "kingdom": "Plantae",
+      "phylum": "Angiosperms",
+      "class": "Magnoliopsida",
+      "order": "Gentianales",
+      "family": "Rubiaceae"
+    },
+    "categories": ["Coffee"]
   }
 ]

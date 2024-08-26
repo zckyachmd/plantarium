@@ -1,6 +1,9 @@
 # Node.js modules
 node_modules
 
+# Cache Bun
+bun.lockb
+
 # Direktori git
 .git
 
@@ -9,6 +12,3 @@ docker-compose.yml
 compose.yml
 .dockerignore
 .gitignore
-
-# Cache Bun
-bun.lockb

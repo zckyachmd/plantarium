@@ -2,8 +2,8 @@
   "name": "plantarium",
   "scripts": {
     "dev": "bun run --hot src/app.ts",
-    "db:migrate": "bunx prisma migrate dev --name init",
-    "db:seed": "bunx prisma db seed"
+    "db:migrate": "bun prisma generate && bun prisma migrate deploy",
+    "db:seed": "bun prisma db seed"
   },
   "prisma": {
     "seed": "bun run prisma/seed.ts"

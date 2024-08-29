@@ -21,6 +21,8 @@ model Category {
   varieties   Variety[] @relation("CategoryVarieties")
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
+
+  @@map("Categories")
 }
 
 model Taxonomy {
@@ -35,6 +37,7 @@ model Taxonomy {
   updatedAt DateTime  @updatedAt
 
   @@unique([kingdom, phylum, class, order, family])
+  @@map("Taxonomies")
 }
 
 model Variety {
@@ -53,4 +56,5 @@ model Variety {
   updatedAt      DateTime   @updatedAt
 
   @@index([name, scientificName])
+  @@map("Varieties")
 }

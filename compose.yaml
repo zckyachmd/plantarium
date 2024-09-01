@@ -3,21 +3,24 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: "plantarium_app"
+    container_name: "plantarium-api"
+    restart: always
     ports:
-      - "3000:3000"
+      - "${WEB_PORT}:3000"
     environment:
       DATABASE_URL: postgresql://${DB_USER}:${DB_PASS}@db:5432/${DB_NAME}?schema=public
     depends_on:
-      - db
-    volumes:
-      - .:/app
+      db:
+        condition: service_healthy
     networks:
       - plantarium_network
+    volumes:
+      - ./:/app
 
   db:
-    image: postgres:latest
-    container_name: "plantarium_db"
+    image: postgres:16-alpine
+    container_name: "plantarium-db"
+    restart: always
     ports:
       - "${DB_PORT}:5432"
     environment:
@@ -28,6 +31,11 @@ services:
       - pgdata:/var/lib/postgresql/data
     networks:
       - plantarium_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
 
 volumes:
   pgdata:

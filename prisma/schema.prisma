@@ -16,25 +16,25 @@ datasource db {
 
 model Category {
   id          Int       @id @default(autoincrement())
-  name        String    @unique
-  description String?
+  name        String    @unique @db.VarChar(100)
+  description String?   @db.VarChar(255)
   varieties   Variety[] @relation("CategoryVarieties")
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
+  createdAt   DateTime? @default(now())
+  updatedAt   DateTime? @updatedAt
 
   @@map("categories")
 }
 
 model Taxonomy {
   id        Int       @id @default(autoincrement())
-  kingdom   String
-  phylum    String
-  class     String
-  order     String
-  family    String
+  kingdom   String    @db.VarChar(100)
+  phylum    String    @db.VarChar(100)
+  class     String    @db.VarChar(100)
+  order     String?   @db.VarChar(100)
+  family    String?   @db.VarChar(100)
   varieties Variety[]
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
 
   @@unique([kingdom, phylum, class, order, family])
   @@map("taxonomies")
@@ -43,17 +43,17 @@ model Taxonomy {
 model Variety {
   id             Int        @id @default(autoincrement())
   name           String     @unique
-  scientificName String
-  description    String?
-  origin         String
+  scientificName String     @db.VarChar(100)
+  description    String?    @db.VarChar(255)
+  origin         String     @db.VarChar(100)
   synonyms       String[]
-  genus          String
-  species        String
+  genus          String     @db.VarChar(100)
+  species        String     @db.VarChar(100)
   taxonomy       Taxonomy   @relation(fields: [taxonomyId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   taxonomyId     Int
   categories     Category[] @relation("CategoryVarieties")
-  createdAt      DateTime   @default(now())
-  updatedAt      DateTime   @updatedAt
+  createdAt      DateTime?  @default(now())
+  updatedAt      DateTime?  @updatedAt
 
   @@index([name, scientificName])
   @@map("varieties")

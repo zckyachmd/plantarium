@@ -48,7 +48,7 @@ Entity-Relationship Diagram
      cp .env.example .env
     ```
 
-        Edit .env to set up your database connection string and other environment variables.
+    Then Edit .env to set up your database connection string and other environment variables.
 
 3.  Run Migrations and Seed
     Create and run migrations the following commands:

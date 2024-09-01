@@ -29,7 +29,6 @@ Thumbs.db
 .husky/
 
 # Prisma
-/prisma/migrations
 /prisma/dev.db
 
 # Diagnostic reports (https://nodejs.org/api/report.html)

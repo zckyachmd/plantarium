@@ -2,8 +2,9 @@
   "name": "plantarium",
   "scripts": {
     "dev": "bun run --hot src/app.ts",
-    "db:migrate": "bun prisma generate && bun prisma migrate deploy",
-    "db:seed": "bun prisma db seed"
+    "db:migrate": "bun prisma migrate deploy",
+    "db:seed": "bun prisma db seed",
+    "start": "bun run db:migrate && bun run src/app.ts"
   },
   "prisma": {
     "seed": "bun run prisma/seed.ts"
@@ -11,13 +12,13 @@
   "dependencies": {
     "@hono/swagger-ui": "^0.4.1",
     "@hono/zod-openapi": "^0.15.3",
-    "@prisma/client": "^5.19.0",
+    "@prisma/client": "^5.20.0",
     "cron": "^3.1.7",
-    "hono": "^4.5.9"
+    "hono": "^4.6.3"
   },
   "devDependencies": {
     "@types/bun": "latest",
-    "@types/node": "^22.5.1",
-    "prisma": "^5.19.0"
+    "@types/node": "^22.7.4",
+    "prisma": "^5.20.0"
   }
 }

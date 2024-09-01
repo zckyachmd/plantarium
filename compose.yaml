@@ -9,7 +9,8 @@ services:
     environment:
       DATABASE_URL: postgresql://${DB_USER}:${DB_PASS}@db:5432/${DB_NAME}?schema=public
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     volumes:
       - .:/app
     networks:
@@ -28,6 +29,11 @@ services:
       - pgdata:/var/lib/postgresql/data
     networks:
       - plantarium_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
 volumes:
   pgdata:

@@ -25,8 +25,11 @@ COPY --from=builder /app /app
 # Copy .env file
 COPY .env .env
 
+# Run Prisma generate
+RUN bun run prisma generate
+
 # Expose port for the application
 EXPOSE 3000
 
 # Start the application
-CMD ["bun", "run", "src/app.ts"]
+CMD ["bun", "start"]

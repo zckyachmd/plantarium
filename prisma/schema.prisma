@@ -58,3 +58,15 @@ model Variety {
   @@index([name, scientificName])
   @@map("varieties")
 }
+
+model User {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique @db.VarChar(15)
+  email     String   @unique @db.VarChar(100)
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([username, email])
+  @@map("users")
+}

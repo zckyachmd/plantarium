@@ -7,7 +7,7 @@ import { Context } from "hono";
  * @param {number} maxRequests - The maximum number of requests allowed within the time window.
  * @return {function} A middleware function that checks the rate limit for each incoming request.
  */
-export const rateLimiter = (windowMs: number, maxRequests: number) => {
+const rateLimiter = (windowMs: number, maxRequests: number) => {
   const requestCounts = new Map<
     string,
     { count: number; firstRequestTime: number }
@@ -42,4 +42,4 @@ export const rateLimiter = (windowMs: number, maxRequests: number) => {
   };
 };
 
-export default rateLimiter
+export default rateLimiter;

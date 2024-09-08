@@ -1,26 +1,27 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "CommonJS",
+    "target": "esnext",
+    "module": "commonjs",
     "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "rootDir": "./src",
-    "baseUrl": "./src",
+    "jsx": "react-jsx",
+    "jsxImportSource": "hono/jsx",
+    "rootDir": "src",
+    "baseUrl": ".",
     "paths": {
-      "*": [
-        "node_modules/*"
+      "@/*": [
+        "src/*"
       ]
-    }
+    },
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true
   },
-  "jsx": "react-jsx",
-  "jsxImportSource": "hono/jsx",
   "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx"
+    "src/**/*",
+    "src/prisma/**/*"
   ],
   "exclude": [
-    "node_modules",
-    "dist"
+    "node_modules"
   ]
 }

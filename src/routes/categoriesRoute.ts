@@ -1,47 +1,93 @@
 import { z } from "@hono/zod-openapi";
+import { OpenAPIHono } from "@hono/zod-openapi";
 import { createRoute } from "@hono/zod-openapi";
 import { errorResponseSchema } from "../schemas/errorSchema";
 import * as categorySchema from "../schemas/categorySchema";
+import * as categoryControllers from "../controllers/categoryController";
 
+const category = new OpenAPIHono();
 const API_TAGS = ["Categories"];
 
-export const getCategories = createRoute({
-  method: "get",
-  path: "/",
-  summary: "Retrieve a list of categories",
-  description:
-    "Fetches categories based on optional query parameters. Supports filtering and including related tables.",
-  request: {
-    query: categorySchema.QueryCategorySchema,
-  },
-  tags: API_TAGS,
-  responses: {
-    200: {
-      description: "List of categories.",
-      content: {
-        "application/json": {
-          schema: z.array(categorySchema.CategorySchema),
+// export const getCategories = createRoute({
+//   method: "get",
+//   path: "/",
+//   summary: "Retrieve a list of categories",
+//   description:
+//     "Fetches categories based on optional query parameters. Supports filtering and including related tables.",
+//   request: {
+//     query: categorySchema.QueryCategorySchema,
+//   },
+//   tags: API_TAGS,
+//   responses: {
+//     200: {
+//       description: "List of categories.",
+//       content: {
+//         "application/json": {
+//           schema: z.array(categorySchema.CategorySchema),
+//         },
+//       },
+//     },
+//     400: {
+//       description:
+//         "Invalid request due to incorrect parameters or data format.",
+//       content: {
+//         "application/json": {
+//           schema: errorResponseSchema
+//             .extend({
+//               errorCode: z.string().default("INVALID_FILTER_FORMAT"),
+//               message: z
+//                 .string()
+//                 .default("The filter parameter must be in key=value format."),
+//             })
+//             .openapi("GetCategoriesErrorResponse"),
+//         },
+//       },
+//     },
+//   },
+// });
+
+category.openapi(
+  {
+    method: "get",
+    path: "/",
+    summary: "Retrieve a list of categories",
+    description:
+      "Fetches categories based on optional query parameters. Supports filtering and including related tables.",
+    request: {
+      query: categorySchema.QueryCategorySchema,
+    },
+    tags: API_TAGS,
+    responses: {
+      200: {
+        description: "List of categories.",
+        content: {
+          "application/json": {
+            schema: z.array(categorySchema.CategorySchema),
+          },
+        },
+      },
+      400: {
+        description:
+          "Invalid request due to incorrect parameters or data format.",
+        content: {
+          "application/json": {
+            schema: errorResponseSchema
+              .extend({
+                errorCode: z.string().default("INVALID_FILTER_FORMAT"),
+                message: z
+                  .string()
+                  .default("The filter parameter must be in key=value format."),
+              })
+              .openapi("GetCategoriesErrorResponse"),
+          },
         },
       },
     },
-    400: {
-      description:
-        "Invalid request due to incorrect parameters or data format.",
-      content: {
-        "application/json": {
-          schema: errorResponseSchema
-            .extend({
-              errorCode: z.string().default("INVALID_FILTER_FORMAT"),
-              message: z
-                .string()
-                .default("The filter parameter must be in key=value format."),
-            })
-            .openapi("GetCategoriesErrorResponse"),
-        },
-      },
-    },
   },
-});
+  async (c) => {
+    return categoryControllers.getCategories(c);
+  }
+);
 
 export const getCategory = createRoute({
   method: "get",
@@ -239,6 +285,7 @@ export const deleteCategory = createRoute({
     }),
   },
   tags: API_TAGS,
+  security: [{ bearerAuth: [] }],
   responses: {
     200: {
       description: "Category deleted successfully.",
@@ -280,4 +327,12 @@ export const deleteCategories = createRoute({
       },
     },
   },
+
+  security: [
+    {
+      Bearer: [],
+    },
+  ],
 });
+
+export default category;

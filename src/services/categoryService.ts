@@ -24,49 +24,49 @@ const validateCategoryIdParam = async (c: any) => {
   return validateIdParam(c, categorySchema.IdSchema, "Invalid category ID");
 };
 
-category.openapi(categoryRoute.getCategories, async (c) => {
-  const validationError = await validateCategoryQueryParams(c);
-  if (validationError) return validationError;
+// category.openapi(categoryRoute.getCategories, async (c) => {
+//   const validationError = await validateCategoryQueryParams(c);
+//   if (validationError) return validationError;
 
-  const queryParams = c.req.query();
-  const filters = stringUtils.parseQuery(queryParams.filter);
-  const sort = stringUtils.parseQuery(queryParams.sort);
-  const include = queryParams.include;
+//   const queryParams = c.req.query();
+//   const filters = stringUtils.parseQuery(queryParams.filter);
+//   const sort = stringUtils.parseQuery(queryParams.sort);
+//   const include = queryParams.include;
 
-  return handleRequest(
-    c,
-    categorySchema.QueryCategorySchema,
-    queryParams,
-    async () => {
-      try {
-        const categories = await categoryModel.getCategories(
-          filters,
-          sort,
-          include
-        );
+//   return handleRequest(
+//     c,
+//     categorySchema.QueryCategorySchema,
+//     queryParams,
+//     async () => {
+//       try {
+//         const categories = await categoryModel.getCategories(
+//           filters,
+//           sort,
+//           include
+//         );
 
-        if (!categories || categories.length === 0) {
-          return c.json(responseUtils.errorResponse("Categories not found"), {
-            status: 404,
-          });
-        }
+//         if (!categories || categories.length === 0) {
+//           return c.json(responseUtils.errorResponse("Categories not found"), {
+//             status: 404,
+//           });
+//         }
 
-        return c.json(
-          responseUtils.successResponse(
-            "Categories retrieved successfully",
-            categories
-          )
-        );
-      } catch (error) {
-        return responseUtils.handleErrors(
-          c,
-          error,
-          "An error occurred while retrieving categories"
-        );
-      }
-    }
-  );
-});
+//         return c.json(
+//           responseUtils.successResponse(
+//             "Categories retrieved successfully",
+//             categories
+//           )
+//         );
+//       } catch (error) {
+//         return responseUtils.handleErrors(
+//           c,
+//           error,
+//           "An error occurred while retrieving categories"
+//         );
+//       }
+//     }
+//   );
+// });
 
 category.openapi(categoryRoute.getCategory, async (c) => {
   const idOrError = await validateCategoryIdParam(c);
@@ -242,12 +242,15 @@ category.openapi(categoryRoute.deleteCategory, async (c) => {
     }
   });
 });
-
+category.openAPIRegistry.registerComponent("securitySchemes", "Bearer", {
+  type: "http",
+  scheme: "bearer",
+});
 category.openapi(categoryRoute.deleteCategories, async (c) => {
   return handleRequest(c, categorySchema.QueryCategorySchema, {}, async () => {
     try {
       const deleteCategories = await categoryModel.deleteCategories();
-      
+
       return c.json(
         responseUtils.successResponse(
           "Categories deleted successfully",

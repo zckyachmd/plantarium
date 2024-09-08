@@ -1,16 +1,41 @@
-import { PrismaClient } from '@prisma/client';
-import fs from 'fs';
-import path from 'path';
+import { PrismaClient } from "@prisma/client";
+import fs from "fs";
+import path from "path";
+import bcrypt from "bcrypt";
 
 const prisma = new PrismaClient();
 
+// Users Defaults
+const users = [
+  {
+    username: "admin",
+    email: "admin@mail.com",
+    password: "admin",
+  },
+];
+
 async function main() {
   try {
-    const filePath = path.join(__dirname, 'samples.json');
-    const rawData = fs.readFileSync(filePath, 'utf-8');
+    const filePath = path.join(__dirname, "samples.json");
+    const rawData = fs.readFileSync(filePath, "utf-8");
     const samples = JSON.parse(rawData);
 
     await prisma.$transaction(async (tx) => {
+      // Users samples
+      users.map(async (user) => {
+        const hashedPassword = await bcrypt.hash(user.password, 10);
+        await tx.user.upsert({
+          where: { email: user.email },
+          update: {},
+          create: {
+            username: user.username,
+            email: user.email,
+            password: hashedPassword,
+          },
+        });
+      });
+
+      // Plant samples
       await Promise.all(
         samples.map(async (sample: any) => {
           const categories = await Promise.all(
@@ -75,9 +100,9 @@ async function main() {
       );
     });
 
-    console.log('Seeding completed successfully.');
+    console.log("Seeding completed successfully.");
   } catch (error) {
-    console.error('Error:', error);
+    console.error("Error:", error);
     process.exit(1);
   } finally {
     await prisma.$disconnect();
